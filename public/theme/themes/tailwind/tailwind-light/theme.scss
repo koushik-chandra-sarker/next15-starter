@@ -1,5 +1,5 @@
-@import './_variables';
-@import './_variablesOverriden';
-@import './_fonts';
-@import '../../../theme-base/_components';
-@import './_extensions';
+@use '_variables';
+@use '_variablesOverriden';
+@use '_fonts';
+@use '../../../theme-base/_components';
+@use '_extensions';

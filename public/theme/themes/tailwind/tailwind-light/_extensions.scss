@@ -1,3 +1,5 @@
+@use "variables";
+
 /* Customizations to the designer theme should be defined here */
 @mixin focused-ring($ring-color) {
     box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px $ring-color, 0 1px 2px 0 rgba(0, 0, 0, 0.0);
@@ -16,7 +18,7 @@
     
     .p-inputtext {
         &.p-invalid.p-component:enabled:focus {
-            box-shadow: 0 0 0 1px $inputErrorBorderColor;
+            box-shadow: 0 0 0 1px variables.$inputErrorBorderColor;
         }
     }
     
@@ -31,7 +33,7 @@
     .p-inputswitch {
         &.p-focus {
             .p-inputswitch-slider {
-                box-shadow: 0 0 0 2px $focusOutlineColor;
+                box-shadow: 0 0 0 2px variables.$focusOutlineColor;
             }
         }
     }
@@ -42,7 +44,7 @@
                 margin-left: -1px;
     
                 &.p-highlight {
-                    border-color: $primaryColor;
+                    border-color: variables.$primaryColor;
                     margin-right: 1px;
                 }
             }
@@ -55,31 +57,31 @@
     
     .p-button {
         &:focus {
-            @include focused-ring($focusOutlineColor);
+            @include focused-ring(variables.$focusOutlineColor);
         }
     
         &.p-button-secondary:enabled:focus {
-            @include focused-ring($secondaryButtonBg);
+            @include focused-ring(variables.$secondaryButtonBg);
         }
     
         &.p-button-success:enabled:focus {
-            @include focused-ring($successButtonBg);
+            @include focused-ring(variables.$successButtonBg);
         }
     
         &.p-button-info:enabled:focus {
-            @include focused-ring($infoButtonBg);
+            @include focused-ring(variables.$infoButtonBg);
         }
     
         &.p-button-warning:enabled:focus {
-            @include focused-ring($warningButtonBg);
+            @include focused-ring(variables.$warningButtonBg);
         }
     
         &.p-button-help:enabled:focus {
-            @include focused-ring($helpButtonBg);
+            @include focused-ring(variables.$helpButtonBg);
         }
     
         &.p-button-danger:enabled:focus {
-            @include focused-ring($dangerButtonBg);
+            @include focused-ring(variables.$dangerButtonBg);
         }
     }
     
@@ -91,7 +93,7 @@
         &:not(.p-checkbox-disabled) {
             .p-checkbox-box {
                 &.p-focus {
-                    @include focused-ring($focusOutlineColor);
+                    @include focused-ring(variables.$focusOutlineColor);
                 }
             }
         }
@@ -101,7 +103,7 @@
         &:not(.p-radiobutton-disabled) {
             .p-radiobutton-box {
                 &.p-focus {
-                    @include focused-ring($focusOutlineColor);
+                    @include focused-ring(variables.$focusOutlineColor);
                 }
             }
         }
@@ -111,11 +113,11 @@
         .p-datatable-tbody {
             > tr {
                 &.p-datatable-dragpoint-top > td {
-                    box-shadow: inset 0 2px 0 0 $primaryColor;
+                    box-shadow: inset 0 2px 0 0 variables.$primaryColor;
                 }
     
                 &.p-datatable-dragpoint-bottom > td {
-                    box-shadow: inset 0 -2px 0 0 $primaryColor;
+                    box-shadow: inset 0 -2px 0 0 variables.$primaryColor;
                 }
             }
         }

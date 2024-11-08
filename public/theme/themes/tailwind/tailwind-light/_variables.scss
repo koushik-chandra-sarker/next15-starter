@@ -1,3 +1,4 @@
+@use "sass:color";
 $primaryColor: #4f46e5 !default;
 $primaryDarkColor: #4338ca !default;
 $primaryDarkerColor: #3730a3 !default;
@@ -160,7 +161,7 @@ $secondaryButtonHoverBorderColor: #475569 !default;
 $secondaryButtonActiveBg: #475569 !default;
 $secondaryButtonTextActiveColor: $secondaryButtonTextColor !default;
 $secondaryButtonActiveBorderColor: #475569 !default;
-$secondaryButtonFocusShadow: 0 0 0 0.2rem scale-color($secondaryButtonBg, $lightness: 60%) !default;
+$secondaryButtonFocusShadow: 0 0 0 0.2rem color.scale($secondaryButtonBg, $lightness: 60%) !default;
 
 $infoButtonBg: #3b82f6 !default;
 $infoButtonTextColor: #ffffff !default;
@@ -171,7 +172,7 @@ $infoButtonHoverBorderColor: #2563eb !default;
 $infoButtonActiveBg: #2563eb !default;
 $infoButtonTextActiveColor: $infoButtonTextColor !default;
 $infoButtonActiveBorderColor: #2563eb !default;
-$infoButtonFocusShadow: 0 0 0 0.2rem scale-color($infoButtonBg, $lightness: 60%) !default;
+$infoButtonFocusShadow: 0 0 0 0.2rem color.scale($infoButtonBg, $lightness: 60%) !default;
 
 $successButtonBg: #22c55e !default;
 $successButtonTextColor: #ffffff !default;
@@ -182,7 +183,7 @@ $successButtonHoverBorderColor: #16a34a !default;
 $successButtonActiveBg: #16a34a !default;
 $successButtonTextActiveColor: $successButtonTextColor !default;
 $successButtonActiveBorderColor: #16a34a !default;
-$successButtonFocusShadow: 0 0 0 0.2rem scale-color($successButtonBg, $lightness: 60%) !default;
+$successButtonFocusShadow: 0 0 0 0.2rem color.scale($successButtonBg, $lightness: 60%) !default;
 
 $warningButtonBg: #f59e0b !default;
 $warningButtonTextColor: #ffffff !default;
@@ -193,7 +194,7 @@ $warningButtonHoverBorderColor: #d97706 !default;
 $warningButtonActiveBg: #d97706 !default;
 $warningButtonTextActiveColor: $warningButtonTextColor !default;
 $warningButtonActiveBorderColor: #d97706 !default;
-$warningButtonFocusShadow: 0 0 0 0.2rem scale-color($warningButtonBg, $lightness: 60%) !default;
+$warningButtonFocusShadow: 0 0 0 0.2rem color.scale($warningButtonBg, $lightness: 60%) !default;
 
 $helpButtonBg: #a855f7 !default;
 $helpButtonTextColor: #ffffff !default;
@@ -204,7 +205,7 @@ $helpButtonHoverBorderColor: #9333ea !default;
 $helpButtonActiveBg: #9333ea !default;
 $helpButtonTextActiveColor: $helpButtonTextColor !default;
 $helpButtonActiveBorderColor: #9333ea !default;
-$helpButtonFocusShadow: 0 0 0 0.2rem scale-color($helpButtonBg, $lightness: 60%) !default;
+$helpButtonFocusShadow: 0 0 0 0.2rem color.scale($helpButtonBg, $lightness: 60%) !default;
 
 $dangerButtonBg: #ef4444 !default;
 $dangerButtonTextColor: #ffffff !default;
@@ -215,7 +216,7 @@ $dangerButtonHoverBorderColor: #dc2626 !default;
 $dangerButtonActiveBg: #dc2626 !default;
 $dangerButtonTextActiveColor: $dangerButtonTextColor !default;
 $dangerButtonActiveBorderColor: #dc2626 !default;
-$dangerButtonFocusShadow: 0 0 0 0.2rem scale-color($dangerButtonBg, $lightness: 60%) !default;
+$dangerButtonFocusShadow: 0 0 0 0.2rem color.scale($dangerButtonBg, $lightness: 60%) !default;
 
 $linkButtonColor: $primaryColor !default;
 $linkButtonHoverColor: $primaryColor !default;
@@ -344,7 +345,7 @@ $inputSwitchHandleBorderRadius: 50% !default;
 $inputSwitchSliderPadding: 0.25rem !default;
 $inputSwitchSliderOffBg: $shade400 !default;
 $inputSwitchHandleOffBg: $shade000 !default;
-$inputSwitchSliderOffHoverBg: scale-color($shade400, $lightness: -10%) !default;
+$inputSwitchSliderOffHoverBg: color.scale($shade400, $lightness: -10%) !default;
 $inputSwitchSliderOnBg: $primaryColor !default;
 $inputSwitchSliderOnHoverBg: $primaryDarkColor !default;
 $inputSwitchHandleOnBg: $shade000 !default;
@@ -365,7 +366,7 @@ $panelHeaderTextHoverColor: $shade900 !default;
 $panelContentBorderColor: $shade300 !default;
 $panelContentBorder: 1px solid $shade300 !default;
 $panelContentBg: $shade000 !default;
-$panelContentEvenRowBg: scale-color($panelContentBg, $lightness: -1%) !default;
+$panelContentEvenRowBg: color.scale($panelContentBg, $lightness: -1%) !default;
 $panelContentTextColor: $shade700 !default;
 $panelContentPadding: 1.25rem !default;
 
@@ -499,7 +500,7 @@ $tableSortableColumnBadgeSize: 1.143rem !default;
 
 $tableBodyRowBg: $shade000 !default;
 $tableBodyRowTextColor: $shade700 !default;
-$tableBodyRowEvenBg: scale-color($tableBodyRowBg, $lightness: -1%) !default;
+$tableBodyRowEvenBg: color.scale($tableBodyRowBg, $lightness: -1%) !default;
 $tableBodyRowHoverBg: $shade200 !default;
 $tableBodyRowTextHoverColor: $shade700 !default;
 $tableBodyCellBorder: 1px solid $shade200 !default;
