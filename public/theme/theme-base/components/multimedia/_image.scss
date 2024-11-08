@@ -1,54 +1,56 @@
+@use "../../../themes/tailwind/tailwind-light/variables";
+
 .p-image-mask {
-    --maskbg: #{$imageMaskBg};
+    --maskbg: #{variables.$imageMaskBg};
 }
 
 .p-image-preview-indicator {
     background-color: transparent;
-    color: $imagePreviewIndicatorColor;
-    transition: $actionIconTransition;
+    color: variables.$imagePreviewIndicatorColor;
+    transition: variables.$actionIconTransition;
 
     .p-icon {
-        width: $imagePreviewActionIconFontSize;
-        height: $imagePreviewActionIconFontSize;
+        width: variables.$imagePreviewActionIconFontSize;
+        height: variables.$imagePreviewActionIconFontSize;
     }
 }
 
 .p-image-preview-container {
     &:hover {
         > .p-image-preview-indicator {
-            background-color: $imagePreviewIndicatorBg;
+            background-color: variables.$imagePreviewIndicatorBg;
         }
     }
 }
 
 .p-image-toolbar {
-    padding: $imagePreviewToolbarPadding;
+    padding: variables.$imagePreviewToolbarPadding;
 }
 
 .p-image-action.p-link {
-    color: $imagePreviewActionIconColor;
-    background-color: $imagePreviewActionIconBg;
-    width: $imagePreviewActionIconWidth;
-    height: $imagePreviewActionIconHeight;
-    border-radius: $imagePreviewActionIconBorderRadius;
-    transition: $actionIconTransition;
-    margin-right: $inlineSpacing;
+    color: variables.$imagePreviewActionIconColor;
+    background-color: variables.$imagePreviewActionIconBg;
+    width: variables.$imagePreviewActionIconWidth;
+    height: variables.$imagePreviewActionIconHeight;
+    border-radius: variables.$imagePreviewActionIconBorderRadius;
+    transition: variables.$actionIconTransition;
+    margin-right: variables.$inlineSpacing;
 
     &:last-child {
         margin-right: 0;
     }
 
     &:hover {
-        color: $imagePreviewActionIconHoverColor;
-        background-color: $imagePreviewActionIconHoverBg;
+        color: variables.$imagePreviewActionIconHoverColor;
+        background-color: variables.$imagePreviewActionIconHoverBg;
     }
 
     span {
-        font-size: $imagePreviewActionIconFontSize;
+        font-size: variables.$imagePreviewActionIconFontSize;
     }
 
     .p-icon {
-        width: $imagePreviewActionIconFontSize;
-        height: $imagePreviewActionIconFontSize;
+        width: variables.$imagePreviewActionIconFontSize;
+        height: variables.$imagePreviewActionIconFontSize;
     }
 }

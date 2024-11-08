@@ -1,11 +1,13 @@
+@use "../../../themes/tailwind/tailwind-light/variables";
+
 .p-toolbar {
-    background: $panelHeaderBg;
-    border: $panelHeaderBorder;
-    padding: $panelHeaderPadding;
-    border-radius: $borderRadius;
-    gap: $inlineSpacing;
+    background: variables.$panelHeaderBg;
+    border: variables.$panelHeaderBorder;
+    padding: variables.$panelHeaderPadding;
+    border-radius: variables.$borderRadius;
+    gap: variables.$inlineSpacing;
 
     .p-toolbar-separator {
-        margin: 0 $inlineSpacing;
+        margin: 0 variables.$inlineSpacing;
     }
 }

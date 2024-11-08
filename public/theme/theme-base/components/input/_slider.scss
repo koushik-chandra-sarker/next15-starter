@@ -1,49 +1,52 @@
+@use "../../../themes/tailwind/tailwind-light/variables";
+@use "../../mixins";
+
 @use 'sass:math';
 
 .p-slider {
-    background: $sliderBg;
-    border: $sliderBorder;
-    border-radius: $borderRadius;
+    background: variables.$sliderBg;
+    border: variables.$sliderBorder;
+    border-radius: variables.$borderRadius;
 
     &.p-slider-horizontal {
-        height: $sliderHorizontalHeight;
+        height: variables.$sliderHorizontalHeight;
 
         .p-slider-handle {
-            margin-top: math.div(-1 * $sliderHandleHeight, 2);
-            margin-left: math.div(-1 * $sliderHandleWidth, 2);
+            margin-top: math.div(-1 * variables.$sliderHandleHeight, 2);
+            margin-left: math.div(-1 * variables.$sliderHandleWidth, 2);
         }
     }
 
     &.p-slider-vertical {
-        width: $sliderVerticalWidth;
+        width: variables.$sliderVerticalWidth;
 
         .p-slider-handle {
-            margin-left: math.div(-1 * $sliderHandleWidth, 2);
-            margin-bottom: math.div(-1 * $sliderHandleHeight, 2);
+            margin-left: math.div(-1 * variables.$sliderHandleWidth, 2);
+            margin-bottom: math.div(-1 * variables.$sliderHandleHeight, 2);
         }
     }
 
     .p-slider-handle {
-        height: $sliderHandleHeight;
-        width: $sliderHandleWidth;
-        background: $sliderHandleBg;
-        border: $sliderHandleBorder;
-        border-radius: $sliderHandleBorderRadius;
-        transition: $formElementTransition;
+        height: variables.$sliderHandleHeight;
+        width: variables.$sliderHandleWidth;
+        background: variables.$sliderHandleBg;
+        border: variables.$sliderHandleBorder;
+        border-radius: variables.$sliderHandleBorderRadius;
+        transition: variables.$formElementTransition;
 
         &:focus {
-            @include focused();
+            @include mixins.focused();
         }
     }
 
     .p-slider-range {
-        background: $sliderRangeBg;
+        background: variables.$sliderRangeBg;
     }
 
     &:not(.p-disabled) {
         .p-slider-handle:hover {
-            background: $sliderHandleHoverBg;
-            border-color: $sliderHandleHoverBorderColor;
+            background: variables.$sliderHandleHoverBg;
+            border-color: variables.$sliderHandleHoverBorderColor;
         }
     }
 }

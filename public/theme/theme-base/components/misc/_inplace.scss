@@ -1,16 +1,19 @@
+@use "../../../themes/tailwind/tailwind-light/variables";
+@use "../../mixins";
+
 .p-inplace {
     .p-inplace-display {
-        padding: $inplacePadding;
-        border-radius: $borderRadius;
-        transition: $formElementTransition;
+        padding: variables.$inplacePadding;
+        border-radius: variables.$borderRadius;
+        transition: variables.$formElementTransition;
 
         &:not(.p-disabled):hover {
-            background: $inplaceHoverBg;
-            color: $inplaceTextHoverColor;
+            background: variables.$inplaceHoverBg;
+            color: variables.$inplaceTextHoverColor;
         }
 
         &:focus {
-            @include focused();
+            @include mixins.focused();
         }
     }
 }

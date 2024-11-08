@@ -1,3 +1,6 @@
+@use "../../../themes/tailwind/tailwind-light/variables";
+@use "../../mixins";
+
 @use 'sass:math';
 
 // core
@@ -19,34 +22,34 @@
 
 // theme
 .p-rating {
-    gap: $inlineSpacing;
+    gap: variables.$inlineSpacing;
 
     .p-rating-item {
         outline-color: transparent;
         border-radius: 50%;
         
         .p-rating-icon {
-            color: $ratingStarIconOffColor;
-            transition: $formElementTransition;   
-            font-size: $ratingIconFontSize;
+            color: variables.$ratingStarIconOffColor;
+            transition: variables.$formElementTransition;   
+            font-size: variables.$ratingIconFontSize;
 
             &.p-icon {
-                width: $ratingIconFontSize;
-                height: $ratingIconFontSize;
+                width: variables.$ratingIconFontSize;
+                height: variables.$ratingIconFontSize;
             }
     
             &.p-rating-cancel {
-                color: $ratingCancelIconColor;
+                color: variables.$ratingCancelIconColor;
             }
         }
 
         &.p-focus {
-            @include focused();
+            @include mixins.focused();
         }
 
         &.p-rating-item-active {
             .p-rating-icon {
-                color: $ratingStarIconOnColor;
+                color: variables.$ratingStarIconOnColor;
             }
         }
     }
@@ -55,10 +58,10 @@
         .p-rating-item {
             &:hover {
                 .p-rating-icon {
-                    color: $ratingStarIconHoverColor;
+                    color: variables.$ratingStarIconHoverColor;
 
                     &.p-rating-cancel {
-                        color: $ratingCancelIconHoverColor;
+                        color: variables.$ratingCancelIconHoverColor;
                     }
                 }
             }
@@ -66,13 +69,13 @@
     }
 }
 
-@if ($highlightBg == $ratingStarIconOnColor) {
+@if (variables.$highlightBg == variables.$ratingStarIconOnColor) {
     .p-highlight {
         .p-rating {
             .p-rating-item {
                 &.p-rating-item-active {
                     .p-rating-icon {
-                        color: $highlightTextColor;
+                        color: variables.$highlightTextColor;
                     }
                 }
             }

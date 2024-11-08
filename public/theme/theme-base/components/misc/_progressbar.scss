@@ -1,17 +1,19 @@
+@use "../../../themes/tailwind/tailwind-light/variables";
+
 .p-progressbar {
-    border: $progressBarBorder;
-    height: $progressBarHeight;
-    background: $progressBarBg;
-    border-radius: $borderRadius;
+    border: variables.$progressBarBorder;
+    height: variables.$progressBarHeight;
+    background: variables.$progressBarBg;
+    border-radius: variables.$borderRadius;
 
     .p-progressbar-value {
         border: 0 none;
         margin: 0;
-        background: $progressBarValueBg;
+        background: variables.$progressBarValueBg;
     }
 
     .p-progressbar-label {
-        color: $progressBarValueTextColor;
-        line-height: $progressBarHeight;
+        color: variables.$progressBarValueTextColor;
+        line-height: variables.$progressBarHeight;
     }
 }

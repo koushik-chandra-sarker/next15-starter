@@ -1,35 +1,37 @@
+@use "../../../themes/tailwind/tailwind-light/variables";
+
 .p-metergroup {
     .p-metergroup-meter-container {
-        background: $progressBarBg;
-        border-radius: $borderRadius;
+        background: variables.$progressBarBg;
+        border-radius: variables.$borderRadius;
     }
 
     .p-metergroup-meter {
-        border: $progressBarBorder;
-        background: $progressBarValueBg;
+        border: variables.$progressBarBorder;
+        background: variables.$progressBarValueBg;
     }
 
     .p-metergroup-label-list {
         .p-metergroup-label-list-item {
-            line-height: $progressBarHeight;
+            line-height: variables.$progressBarHeight;
         }
         
         .p-metergroup-label-type {
-            background: $progressBarValueBg;
+            background: variables.$progressBarValueBg;
             width: 0.5rem;
             height: 0.5rem;
             border-radius: 100%;
-            margin-right: $inlineSpacing;
+            margin-right: variables.$inlineSpacing;
         }
         
         .p-metergroup-label {
-            margin-right: $inlineSpacing * 2;
+            margin-right: variables.$inlineSpacing * 2;
         }
     
         .p-metergroup-label-icon {
             width: 1rem;
             height: 1rem;
-            margin-right: $inlineSpacing;
+            margin-right: variables.$inlineSpacing;
         }
     }
 
@@ -40,21 +42,21 @@
         }
 
         .p-metergroup-meter:first-of-type {
-            border-top-left-radius: $borderRadius;
-            border-bottom-left-radius: $borderRadius;
+            border-top-left-radius: variables.$borderRadius;
+            border-bottom-left-radius: variables.$borderRadius;
         }
 
         .p-metergroup-meter:last-of-type {
-            border-top-right-radius: $borderRadius;
-            border-bottom-right-radius: $borderRadius;
+            border-top-right-radius: variables.$borderRadius;
+            border-bottom-right-radius: variables.$borderRadius;
         }
 
         .p-metergroup-label-list-start {
-            margin-bottom: $inlineSpacing * 2;
+            margin-bottom: variables.$inlineSpacing * 2;
         }
     
         .p-metergroup-label-list-end {
-            margin-top: $inlineSpacing * 2;
+            margin-top: variables.$inlineSpacing * 2;
         }
     }
 
@@ -65,17 +67,17 @@
         }
 
         .p-metergroup-meter:first-of-type {
-            border-top-left-radius: $borderRadius;
-            border-top-right-radius: $borderRadius;
+            border-top-left-radius: variables.$borderRadius;
+            border-top-right-radius: variables.$borderRadius;
         }
     
         .p-metergroup-meter:last-of-type {
-            border-bottom-left-radius: $borderRadius;
-            border-bottom-right-radius: $borderRadius;
+            border-bottom-left-radius: variables.$borderRadius;
+            border-bottom-right-radius: variables.$borderRadius;
         }
 
         .p-metergroup-label-list:not(.p-metergroup-label-list-start) {
-            margin-left: $inlineSpacing * 2;
+            margin-left: variables.$inlineSpacing * 2;
         }
     }
 }

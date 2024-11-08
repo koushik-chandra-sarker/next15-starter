@@ -1,72 +1,75 @@
+@use "sass:list";
+@use "../../../themes/tailwind/tailwind-light/variables";
+
 .p-picklist {
 	.p-picklist-buttons {
-		padding: $panelContentPadding;
+		padding: variables.$panelContentPadding;
 
 		.p-button {
-			margin-bottom: $inlineSpacing;
+			margin-bottom: variables.$inlineSpacing;
 		}
 	}
 
 	.p-picklist-header {
-		background: $panelHeaderBg;
-		color: $panelHeaderTextColor;
-		border: $panelHeaderBorder;
-		padding: $panelHeaderPadding;
-		font-weight: $panelHeaderFontWeight;
+		background: variables.$panelHeaderBg;
+		color: variables.$panelHeaderTextColor;
+		border: variables.$panelHeaderBorder;
+		padding: variables.$panelHeaderPadding;
+		font-weight: variables.$panelHeaderFontWeight;
 		border-bottom: 0 none;
-		border-top-right-radius: $borderRadius;
-		border-top-left-radius: $borderRadius;
+		border-top-right-radius: variables.$borderRadius;
+		border-top-left-radius: variables.$borderRadius;
 	}
 
 	.p-picklist-filter-container {
-		padding: $panelHeaderPadding;
-		background: $panelContentBg;
-		border: $panelHeaderBorder;
+		padding: variables.$panelHeaderPadding;
+		background: variables.$panelContentBg;
+		border: variables.$panelHeaderBorder;
 		border-bottom: 0 none;
 
 		.p-picklist-filter-input {
-			padding-right: nth($inputPadding, 2) + $primeIconFontSize;
+			padding-right: list.nth(variables.$inputPadding, 2) + variables.$primeIconFontSize;
 		}
 
 		.p-picklist-filter-icon {
-			right: nth($inputPadding, 2);
-			color: $inputIconColor;
+			right: list.nth(variables.$inputPadding, 2);
+			color: variables.$inputIconColor;
 		}
 	}
 
 	.p-picklist-list {
-		border: $panelContentBorder;
-		background: $panelContentBg;
-		color: $panelContentTextColor;
-		padding: $inputListPadding;
-		border-bottom-right-radius: $borderRadius;
-		border-bottom-left-radius: $borderRadius;
+		border: variables.$panelContentBorder;
+		background: variables.$panelContentBg;
+		color: variables.$panelContentTextColor;
+		padding: variables.$inputListPadding;
+		border-bottom-right-radius: variables.$borderRadius;
+		border-bottom-left-radius: variables.$borderRadius;
 		outline: 0 none;
 
 		.p-picklist-item {
-			padding: $inputListItemPadding;
-			margin: $inputListItemMargin;
-			border: $inputListItemBorder;
-			color: $inputListItemTextColor;
-			background: $inputListItemBg;
-			transition: transform $transitionDuration, $listItemTransition;
+			padding: variables.$inputListItemPadding;
+			margin: variables.$inputListItemMargin;
+			border: variables.$inputListItemBorder;
+			color: variables.$inputListItemTextColor;
+			background: variables.$inputListItemBg;
+			transition: transform variables.$transitionDuration, variables.$listItemTransition;
 
 			&:not(.p-highlight):hover {
-				background: $inputListItemHoverBg;
-				color: $inputListItemTextHoverColor;
+				background: variables.$inputListItemHoverBg;
+				color: variables.$inputListItemTextHoverColor;
 			}
 
 			&.p-focus {
-				color: $inputListItemTextFocusColor;
-				background: $inputListItemFocusBg;
+				color: variables.$inputListItemTextFocusColor;
+				background: variables.$inputListItemFocusBg;
 			}
 
 			&.p-highlight {
-				color: $highlightTextColor;
-				background: $highlightBg;
+				color: variables.$highlightTextColor;
+				background: variables.$highlightBg;
 
 				&.p-focus {
-					background: $highlightFocusBg;
+					background: variables.$highlightFocusBg;
 				}
 			}
 		}

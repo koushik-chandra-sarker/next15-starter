@@ -1,3 +1,6 @@
+@use "sass:list";
+@use "../../../themes/tailwind/tailwind-light/variables";
+
 // core
 .p-fluid .p-icon-field-left,
 .p-fluid .p-icon-field-right {
@@ -5,11 +8,11 @@
 }
 
 .p-icon-field-left > .p-input-icon:first-of-type {
-    left: nth($inputPadding, 2);
-    color: $inputIconColor;
+    left: list.nth(variables.$inputPadding, 2);
+    color: variables.$inputIconColor;
 }
 
 .p-icon-field-right > .p-input-icon:last-of-type  {
-    right: nth($inputPadding, 2);
-    color: $inputIconColor;
+    right: list.nth(variables.$inputPadding, 2);
+    color: variables.$inputIconColor;
 }

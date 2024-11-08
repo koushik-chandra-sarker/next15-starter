@@ -14,7 +14,7 @@ export default function Home() {
             <InputText id="username" value={value} onChange={(e) => setValue(e.target.value)} />
             <label htmlFor="username">Username</label>
         </FloatLabel>
-        <p>rhis </p>
+        <p>This </p>
         <h3>this is working fine</h3>
     </div>
   );

@@ -1,5 +1,7 @@
+@use "../../mixins";
+
 .p-inputnumber {
     &.p-invalid.p-component > .p-inputtext {
-        @include invalid-input();
+        @include mixins.invalid-input();
     }
 }

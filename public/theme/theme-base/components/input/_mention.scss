@@ -1,30 +1,32 @@
+@use "../../../themes/tailwind/tailwind-light/variables";
+
 .p-mention-panel {
-    background: $inputOverlayBg;
-    color: $inputListTextColor;
-    border: $inputOverlayBorder;
-    border-radius: $borderRadius;
-    box-shadow: $inputOverlayShadow;
+    background: variables.$inputOverlayBg;
+    color: variables.$inputListTextColor;
+    border: variables.$inputOverlayBorder;
+    border-radius: variables.$borderRadius;
+    box-shadow: variables.$inputOverlayShadow;
 
     .p-mention-items {
-        padding: $inputListPadding;
+        padding: variables.$inputListPadding;
 
         .p-mention-item {
-            margin: $inputListItemMargin;
-            padding: $inputListItemPadding;
-            border: $inputListItemBorder;
-            color: $inputListItemTextColor;
-            background: $inputListItemBg;
-            transition: $listItemTransition;
-            border-radius: $inputListItemBorderRadius;
+            margin: variables.$inputListItemMargin;
+            padding: variables.$inputListItemPadding;
+            border: variables.$inputListItemBorder;
+            color: variables.$inputListItemTextColor;
+            background: variables.$inputListItemBg;
+            transition: variables.$listItemTransition;
+            border-radius: variables.$inputListItemBorderRadius;
 
             &:hover {
-                color: $inputListItemTextHoverColor;
-                background: $inputListItemHoverBg;
+                color: variables.$inputListItemTextHoverColor;
+                background: variables.$inputListItemHoverBg;
             }
 
             &.p-highlight {
-                color: $highlightTextColor;
-                background: $highlightBg;
+                color: variables.$highlightTextColor;
+                background: variables.$highlightBg;
             }
         }
     }

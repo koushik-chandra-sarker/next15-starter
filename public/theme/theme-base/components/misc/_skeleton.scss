@@ -1,8 +1,10 @@
+@use "../../../themes/tailwind/tailwind-light/variables";
+
 .p-skeleton {
-    background-color: $skeletonBg;
-    border-radius: $borderRadius;
+    background-color: variables.$skeletonBg;
+    border-radius: variables.$borderRadius;
 
     &:after {
-        background: linear-gradient(90deg, rgba(255, 255, 255, 0), $skeletonAnimationBg, rgba(255, 255, 255, 0));
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0), variables.$skeletonAnimationBg, rgba(255, 255, 255, 0));
     }
 }

@@ -1,99 +1,102 @@
+@use "../../../themes/tailwind/tailwind-light/variables";
+@use "../../mixins";
+
 .p-message {
-    margin: $messageMargin;
-    border-radius: $borderRadius;
+    margin: variables.$messageMargin;
+    border-radius: variables.$borderRadius;
 
     .p-message-wrapper {
-        padding: $messagePadding;
+        padding: variables.$messagePadding;
     }
 
     .p-message-close {
-        width: $actionIconWidth;
-        height: $actionIconHeight;
-        border-radius: $actionIconBorderRadius;
+        width: variables.$actionIconWidth;
+        height: variables.$actionIconHeight;
+        border-radius: variables.$actionIconBorderRadius;
         background: transparent;
-        transition: $actionIconTransition;
+        transition: variables.$actionIconTransition;
 
         &:hover {
             background: rgba(255,255,255,.5);
         }
 
         &:focus-visible {
-            @include focused();
+            @include mixins.focused();
         }
     }
 
     &.p-message-info {
-        background: $infoMessageBg;
-        border: $infoMessageBorder;
-        border-width: $messageBorderWidth;
-        color: $infoMessageTextColor;
+        background: variables.$infoMessageBg;
+        border: variables.$infoMessageBorder;
+        border-width: variables.$messageBorderWidth;
+        color: variables.$infoMessageTextColor;
 
         .p-message-icon {
-            color: $infoMessageIconColor;
+            color: variables.$infoMessageIconColor;
         }
 
         .p-message-close {
-            color: $infoMessageIconColor;
+            color: variables.$infoMessageIconColor;
         }
     }
 
     &.p-message-success {
-        background: $successMessageBg;
-        border: $successMessageBorder;
-        border-width: $messageBorderWidth;
-        color: $successMessageTextColor;
+        background: variables.$successMessageBg;
+        border: variables.$successMessageBorder;
+        border-width: variables.$messageBorderWidth;
+        color: variables.$successMessageTextColor;
 
         .p-message-icon {
-            color: $successMessageIconColor;
+            color: variables.$successMessageIconColor;
         }
 
         .p-message-close {
-            color: $successMessageIconColor;
+            color: variables.$successMessageIconColor;
         }
     }
 
     &.p-message-warn {
-        background: $warningMessageBg;
-        border: $warningMessageBorder;
-        border-width: $messageBorderWidth;
-        color: $warningMessageTextColor;
+        background: variables.$warningMessageBg;
+        border: variables.$warningMessageBorder;
+        border-width: variables.$messageBorderWidth;
+        color: variables.$warningMessageTextColor;
 
         .p-message-icon {
-            color: $warningMessageIconColor;
+            color: variables.$warningMessageIconColor;
         }
 
         .p-message-close {
-            color: $warningMessageIconColor;
+            color: variables.$warningMessageIconColor;
         }
     }
 
     &.p-message-error {
-        background: $errorMessageBg;
-        border: $errorMessageBorder;
-        border-width: $messageBorderWidth;
-        color: $errorMessageTextColor;
+        background: variables.$errorMessageBg;
+        border: variables.$errorMessageBorder;
+        border-width: variables.$messageBorderWidth;
+        color: variables.$errorMessageTextColor;
 
         .p-message-icon {
-            color: $errorMessageIconColor;
+            color: variables.$errorMessageIconColor;
         }
 
         .p-message-close {
-            color: $errorMessageIconColor;
+            color: variables.$errorMessageIconColor;
         }
     }
 
     .p-message-text {
-        font-size: $messageTextFontSize;
-        font-weight: $messageTextFontWeight;
+        font-size: variables.$messageTextFontSize;
+        font-weight: variables.$messageTextFontWeight;
     }
 
     .p-message-icon {
-        font-size: $messageIconFontSize;
-        margin-right: $inlineSpacing;
+        font-size: variables.$messageIconFontSize;
+        margin-right: variables.$inlineSpacing;
 
         &.p-icon {
-            width: $messageIconFontSize;
-            height: $messageIconFontSize;
+            width: variables.$messageIconFontSize;
+            height: variables.$messageIconFontSize;
         }
     }
 
@@ -102,6 +105,6 @@
     }
 
     .p-message-detail {
-        margin-left: $inlineSpacing;
+        margin-left: variables.$inlineSpacing;
     }
 }

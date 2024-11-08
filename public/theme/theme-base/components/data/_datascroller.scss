@@ -1,47 +1,49 @@
+@use "../../../themes/tailwind/tailwind-light/variables";
+
 .p-datascroller {
     .p-paginator-top {
-        border-width: $tableTopPaginatorBorderWidth;
+        border-width: variables.$tableTopPaginatorBorderWidth;
         border-radius: 0;
     }
 
     .p-paginator-bottom {
-        border-width: $tableBottomPaginatorBorderWidth;
+        border-width: variables.$tableBottomPaginatorBorderWidth;
         border-radius: 0;
     }
 
     .p-datascroller-header {
-        background: $tableHeaderBg;
-        color: $tableHeaderTextColor;
-        border: $tableHeaderBorder;
-        border-width: $tableHeaderBorderWidth;
-        padding: $tableHeaderPadding;
-        font-weight: $tableHeaderFontWeight;
+        background: variables.$tableHeaderBg;
+        color: variables.$tableHeaderTextColor;
+        border: variables.$tableHeaderBorder;
+        border-width: variables.$tableHeaderBorderWidth;
+        padding: variables.$tableHeaderPadding;
+        font-weight: variables.$tableHeaderFontWeight;
     }
 
     .p-datascroller-content {
-        background: $tableBodyRowBg;
-        color: $tableBodyRowTextColor;
-        border: $dataViewContentBorder;
-        padding: $dataViewContentPadding;
+        background: variables.$tableBodyRowBg;
+        color: variables.$tableBodyRowTextColor;
+        border: variables.$dataViewContentBorder;
+        padding: variables.$dataViewContentPadding;
     }
 
     &.p-datascroller-inline {
         .p-datascroller-list {
             > li {
-                border: $dataViewListItemBorder;
-                border-width: $dataViewListItemBorderWidth;
+                border: variables.$dataViewListItemBorder;
+                border-width: variables.$dataViewListItemBorderWidth;
             }
         }
     }
 
     .p-datascroller-footer {
-        background: $tableFooterBg;
-        color: $tableFooterTextColor;
-        border: $tableFooterBorder;
-        border-width: $tableFooterBorderWidth;
-        padding: $tableFooterPadding;
-        font-weight: $tableFooterFontWeight;
-        border-bottom-left-radius: $borderRadius;
-        border-bottom-right-radius: $borderRadius;
+        background: variables.$tableFooterBg;
+        color: variables.$tableFooterTextColor;
+        border: variables.$tableFooterBorder;
+        border-width: variables.$tableFooterBorderWidth;
+        padding: variables.$tableFooterPadding;
+        font-weight: variables.$tableFooterFontWeight;
+        border-bottom-left-radius: variables.$borderRadius;
+        border-bottom-right-radius: variables.$borderRadius;
     }
 }

@@ -1,25 +1,28 @@
+@use "../../../themes/tailwind/tailwind-light/variables";
+@use "../../mixins";
+
 .p-panelmenu {
 	.p-panelmenu-header {
 		outline: 0 none;
 
 		.p-panelmenu-header-content {
-			border: $accordionHeaderBorder;
-			color: $accordionHeaderTextColor;
-			background: $accordionHeaderBg;
-			border-radius: $borderRadius;
-			transition: $listItemTransition;
+			border: variables.$accordionHeaderBorder;
+			color: variables.$accordionHeaderTextColor;
+			background: variables.$accordionHeaderBg;
+			border-radius: variables.$borderRadius;
+			transition: variables.$listItemTransition;
 
 			.p-panelmenu-header-link {
-				color: $accordionHeaderTextColor;
-				padding: $accordionHeaderPadding;
-				font-weight: $accordionHeaderFontWeight;
+				color: variables.$accordionHeaderTextColor;
+				padding: variables.$accordionHeaderPadding;
+				font-weight: variables.$accordionHeaderFontWeight;
 
 				.p-submenu-icon {
-					margin-right: $inlineSpacing;
+					margin-right: variables.$inlineSpacing;
 				}
 
 				.p-menuitem-icon {
-					margin-right: $inlineSpacing;
+					margin-right: variables.$inlineSpacing;
 				}
 			}
 		}
@@ -27,24 +30,24 @@
 		&:not(.p-disabled) {
 			&:focus-visible {
 				.p-panelmenu-header-content {
-					@include focused-inset();
+					@include mixins.focused-inset();
 				}
 			}
 		}
 
 		&:not(.p-highlight):not(.p-disabled):hover {
 			.p-panelmenu-header-content {
-				background: $accordionHeaderHoverBg;
-				border-color: $accordionHeaderHoverBorderColor;
-				color: $accordionHeaderTextHoverColor;
+				background: variables.$accordionHeaderHoverBg;
+				border-color: variables.$accordionHeaderHoverBorderColor;
+				color: variables.$accordionHeaderTextHoverColor;
 			}
 		}
 
 		&:not(.p-disabled).p-highlight {
 			.p-panelmenu-header-content {
-				background: $accordionHeaderActiveBg;
-				border-color: $accordionHeaderActiveBorderColor;
-				color: $accordionHeaderTextActiveColor;
+				background: variables.$accordionHeaderActiveBg;
+				border-color: variables.$accordionHeaderActiveBorderColor;
+				color: variables.$accordionHeaderTextActiveColor;
 				border-bottom-right-radius: 0;
 				border-bottom-left-radius: 0;
 				margin-bottom: 0;
@@ -52,55 +55,55 @@
 
 			&:hover {
 				.p-panelmenu-header-content {
-					border-color: $accordionHeaderActiveHoverBorderColor;
-					background: $accordionHeaderActiveHoverBg;
-					color: $accordionHeaderTextActiveHoverColor;
+					border-color: variables.$accordionHeaderActiveHoverBorderColor;
+					background: variables.$accordionHeaderActiveHoverBg;
+					color: variables.$accordionHeaderTextActiveHoverColor;
 				}
 			}
 		}
 	}
 
 	.p-panelmenu-content {
-		padding: $verticalMenuPadding;
-		border: $accordionContentBorder;
-		background: $accordionContentBg;
-		color: $accordionContentTextColor;
+		padding: variables.$verticalMenuPadding;
+		border: variables.$accordionContentBorder;
+		background: variables.$accordionContentBg;
+		color: variables.$accordionContentTextColor;
 		border-top: 0;
 		border-top-right-radius: 0;
 		border-top-left-radius: 0;
-		border-bottom-right-radius: $borderRadius;
-		border-bottom-left-radius: $borderRadius;
+		border-bottom-right-radius: variables.$borderRadius;
+		border-bottom-left-radius: variables.$borderRadius;
 
 		.p-panelmenu-root-list {
 			outline: 0 none;
 		}
 
 		.p-menuitem {
-			@include menuitem-link();
+			@include mixins.menuitem-link();
 
 			.p-menuitem-content {
 				.p-menuitem-link {
 					.p-submenu-icon {
-						margin-right: $inlineSpacing;
+						margin-right: variables.$inlineSpacing;
 					}
 				}
 			}
 		}
 
 		.p-menuitem-separator {
-			border-top: $divider;
-			margin: $menuSeparatorMargin;
+			border-top: variables.$divider;
+			margin: variables.$menuSeparatorMargin;
 		}
 
 		.p-submenu-list:not(.p-panelmenu-root-list) {
-			padding: $treeNodeChildrenPadding;
+			padding: variables.$treeNodeChildrenPadding;
 		}
 	}
 
 	.p-panelmenu-panel {
-		margin-bottom: $accordionSpacing;
+		margin-bottom: variables.$accordionSpacing;
 
-		@if $accordionSpacing == 0 {
+		@if variables.$accordionSpacing == 0 {
 			.p-panelmenu-header {
 				.p-panelmenu-header-content {
 					border-radius: 0;
@@ -129,8 +132,8 @@
 			&:first-child {
 				.p-panelmenu-header {
 					.p-panelmenu-header-content {
-						border-top-right-radius: $borderRadius;
-						border-top-left-radius: $borderRadius;
+						border-top-right-radius: variables.$borderRadius;
+						border-top-left-radius: variables.$borderRadius;
 					}
 				}
 			}
@@ -138,14 +141,14 @@
 			&:last-child {
 				.p-panelmenu-header:not(.p-highlight) {
 					.p-panelmenu-header-content {
-						border-bottom-right-radius: $borderRadius;
-						border-bottom-left-radius: $borderRadius;
+						border-bottom-right-radius: variables.$borderRadius;
+						border-bottom-left-radius: variables.$borderRadius;
 					}
 				}
 
 				.p-panelmenu-content {
-					border-bottom-right-radius: $borderRadius;
-					border-bottom-left-radius: $borderRadius;
+					border-bottom-right-radius: variables.$borderRadius;
+					border-bottom-left-radius: variables.$borderRadius;
 				}
 			}
 		}

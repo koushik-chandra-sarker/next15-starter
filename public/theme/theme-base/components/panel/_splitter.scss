@@ -1,23 +1,26 @@
+@use "../../../themes/tailwind/tailwind-light/variables";
+@use "../../mixins";
+
 .p-splitter {
-	border: $panelContentBorder;
-	background: $panelContentBg;
-	border-radius: $borderRadius;
-	color: $panelContentTextColor;
+	border: variables.$panelContentBorder;
+	background: variables.$panelContentBg;
+	border-radius: variables.$borderRadius;
+	color: variables.$panelContentTextColor;
 
 	.p-splitter-gutter {
-		transition: $actionIconTransition;
-		background: $splitterGutterBg;
+		transition: variables.$actionIconTransition;
+		background: variables.$splitterGutterBg;
 
 		.p-splitter-gutter-handle {
-			background: $splitterGutterHandleBg;
+			background: variables.$splitterGutterHandleBg;
 
 			&:focus-visible {
-				@include focused();
+				@include mixins.focused();
 			}
 		}
 	}
 
 	.p-splitter-gutter-resizing {
-		background: $splitterGutterHandleBg;
+		background: variables.$splitterGutterHandleBg;
 	}
 }

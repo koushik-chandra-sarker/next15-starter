@@ -1,37 +1,40 @@
+@use "../../../themes/tailwind/tailwind-light/variables";
+@use "../../mixins";
+
 .p-carousel {
     .p-carousel-content {
         .p-carousel-prev,
         .p-carousel-next {
-            @include action-icon();
+            @include mixins.action-icon();
             & {
-                margin: $inlineSpacing;
+                margin: variables.$inlineSpacing;
             }
         }
     }
 
     .p-carousel-indicators {
-        padding: $carouselIndicatorsPadding;
+        padding: variables.$carouselIndicatorsPadding;
 
         .p-carousel-indicator {
-            margin-right: $inlineSpacing;
-            margin-bottom: $inlineSpacing;
+            margin-right: variables.$inlineSpacing;
+            margin-bottom: variables.$inlineSpacing;
            
             button {
-                background-color: $carouselIndicatorBg;
-                width: $carouselIndicatorWidth;
-                height: $carouselIndicatorHeight;
-                transition: $actionIconTransition;
-                border-radius: $carouselIndicatorBorderRadius;
+                background-color: variables.$carouselIndicatorBg;
+                width: variables.$carouselIndicatorWidth;
+                height: variables.$carouselIndicatorHeight;
+                transition: variables.$actionIconTransition;
+                border-radius: variables.$carouselIndicatorBorderRadius;
 
                 &:hover {
-                    background: $carouselIndicatorHoverBg;
+                    background: variables.$carouselIndicatorHoverBg;
                 }
             }
 
             &.p-highlight {
                 button {
-                    background: $highlightBg;
-                    color: $highlightTextColor;
+                    background: variables.$highlightBg;
+                    color: variables.$highlightTextColor;
                 }
             }
         }

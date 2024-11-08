@@ -1,36 +1,39 @@
+@use "../../../themes/tailwind/tailwind-light/variables";
+@use "../../mixins";
+
 .p-splitbutton {
-    border-radius: $borderRadius;
+    border-radius: variables.$borderRadius;
 
     &.p-button-outlined {
         > .p-button {
             background-color: transparent;
-            color: $buttonBg;
-            border: $outlinedButtonBorder;
+            color: variables.$buttonBg;
+            border: variables.$outlinedButtonBorder;
 
             &:not(:disabled):hover {
-                background: rgba($buttonBg, $textButtonHoverBgOpacity);
-                color: $buttonBg;
+                background: rgba(variables.$buttonBg, variables.$textButtonHoverBgOpacity);
+                color: variables.$buttonBg;
             }
 
             &:not(:disabled):active {
-                background: rgba($buttonBg, $textButtonActiveBgOpacity);
-                color: $buttonBg;
+                background: rgba(variables.$buttonBg, variables.$textButtonActiveBgOpacity);
+                color: variables.$buttonBg;
             }
         }
 
         &.p-button-plain {
             > .p-button {
-                color: $plainButtonTextColor;
-                border-color: $plainButtonTextColor;
+                color: variables.$plainButtonTextColor;
+                border-color: variables.$plainButtonTextColor;
 
                 &:not(:disabled):hover {
-                    background: $plainButtonHoverBgColor;
-                    color: $plainButtonTextColor;
+                    background: variables.$plainButtonHoverBgColor;
+                    color: variables.$plainButtonTextColor;
                 }
         
                 &:not(:disabled):active {
-                    background: $plainButtonActiveBgColor;
-                    color: $plainButtonTextColor;
+                    background: variables.$plainButtonActiveBgColor;
+                    color: variables.$plainButtonTextColor;
                 }
             }
         }
@@ -39,73 +42,73 @@
     &.p-button-text {
         > .p-button {
             background-color: transparent;
-            color: $buttonBg;
+            color: variables.$buttonBg;
             border-color: transparent;
 
             &:not(:disabled):hover {
-                background: rgba($buttonBg, $textButtonHoverBgOpacity);
-                color: $buttonBg;
+                background: rgba(variables.$buttonBg, variables.$textButtonHoverBgOpacity);
+                color: variables.$buttonBg;
                 border-color: transparent;
             }
 
             &:not(:disabled):active {
-                background: rgba($buttonBg, $textButtonActiveBgOpacity);
-                color: $buttonBg;
+                background: rgba(variables.$buttonBg, variables.$textButtonActiveBgOpacity);
+                color: variables.$buttonBg;
                 border-color: transparent;
             }
         }
 
         &.p-button-plain {
             > .p-button {
-                color: $plainButtonTextColor;
+                color: variables.$plainButtonTextColor;
 
                 &:not(:disabled):hover {
-                    background: $plainButtonHoverBgColor;
-                    color: $plainButtonTextColor;
+                    background: variables.$plainButtonHoverBgColor;
+                    color: variables.$plainButtonTextColor;
                 }
         
                 &:not(:disabled):active {
-                    background: $plainButtonActiveBgColor;
-                    color: $plainButtonTextColor;
+                    background: variables.$plainButtonActiveBgColor;
+                    color: variables.$plainButtonTextColor;
                 }
             }
         }
     }
 
     &.p-button-raised {
-        box-shadow: $raisedButtonShadow;
+        box-shadow: variables.$raisedButtonShadow;
     }
 
     &.p-button-rounded {
-        border-radius: $roundedButtonBorderRadius;
+        border-radius: variables.$roundedButtonBorderRadius;
 
         > .p-button {
-            border-radius: $roundedButtonBorderRadius;
+            border-radius: variables.$roundedButtonBorderRadius;
         }
     }
 
     &.p-button-sm {
         > .p-button {
-            @include scaledFontSize($fontSize, $scaleSM);
-            @include scaledPadding($buttonPadding, $scaleSM);
+            @include mixins.scaledFontSize(variables.$fontSize, variables.$scaleSM);
+            @include mixins.scaledPadding(variables.$buttonPadding, variables.$scaleSM);
 
             .p-button-icon {
-                @include scaledFontSize($primeIconFontSize, $scaleSM);
+                @include mixins.scaledFontSize(variables.$primeIconFontSize, variables.$scaleSM);
             }
         }
     }
 
     &.p-button-lg {
         > .p-button {
-            @include scaledFontSize($fontSize, $scaleLG);
-            @include scaledPadding($buttonPadding, $scaleLG);
+            @include mixins.scaledFontSize(variables.$fontSize, variables.$scaleLG);
+            @include mixins.scaledPadding(variables.$buttonPadding, variables.$scaleLG);
 
             &.p-button-icon-only {
                 width: auto;
             }
             
             .p-button-icon {
-                @include scaledFontSize($primeIconFontSize, $scaleLG);
+                @include mixins.scaledFontSize(variables.$primeIconFontSize, variables.$scaleLG);
             }
         }
     }
@@ -122,17 +125,17 @@
     &.p-button-outlined {
         > .p-button {
             background-color: transparent;
-            color: $secondaryButtonBg;
-            border: $outlinedButtonBorder;
+            color: variables.$secondaryButtonBg;
+            border: variables.$outlinedButtonBorder;
 
             &:not(:disabled):hover {
-                background: rgba($secondaryButtonBg, $textButtonHoverBgOpacity);
-                color: $secondaryButtonBg;
+                background: rgba(variables.$secondaryButtonBg, variables.$textButtonHoverBgOpacity);
+                color: variables.$secondaryButtonBg;
             }
 
             &:not(:disabled):active {
-                background: rgba($secondaryButtonBg, $textButtonActiveBgOpacity);
-                color: $secondaryButtonBg;
+                background: rgba(variables.$secondaryButtonBg, variables.$textButtonActiveBgOpacity);
+                color: variables.$secondaryButtonBg;
             }
         }
     }
@@ -140,19 +143,19 @@
     &.p-button-text {
         > .p-button {
             background-color: transparent;
-            color: $secondaryButtonBg;
+            color: variables.$secondaryButtonBg;
             border-color: transparent;
 
             &:not(:disabled):hover {
-                background: rgba($secondaryButtonBg, $textButtonHoverBgOpacity);
+                background: rgba(variables.$secondaryButtonBg, variables.$textButtonHoverBgOpacity);
                 border-color: transparent;
-                color: $secondaryButtonBg;
+                color: variables.$secondaryButtonBg;
             }
 
             &:not(:disabled):active {
-                background: rgba($secondaryButtonBg, $textButtonActiveBgOpacity);
+                background: rgba(variables.$secondaryButtonBg, variables.$textButtonActiveBgOpacity);
                 border-color: transparent;
-                color: $secondaryButtonBg;
+                color: variables.$secondaryButtonBg;
             }
         }
     }
@@ -162,17 +165,17 @@
     &.p-button-outlined {
         > .p-button {
             background-color: transparent;
-            color: $infoButtonBg;
-            border: $outlinedButtonBorder;
+            color: variables.$infoButtonBg;
+            border: variables.$outlinedButtonBorder;
 
             &:not(:disabled):hover {
-                background: rgba($infoButtonBg, $textButtonHoverBgOpacity);
-                color: $infoButtonBg;
+                background: rgba(variables.$infoButtonBg, variables.$textButtonHoverBgOpacity);
+                color: variables.$infoButtonBg;
             }
 
             &:not(:disabled):active {
-                background: rgba($infoButtonBg, $textButtonActiveBgOpacity);
-                color: $infoButtonBg;
+                background: rgba(variables.$infoButtonBg, variables.$textButtonActiveBgOpacity);
+                color: variables.$infoButtonBg;
             }
         }
     }
@@ -180,19 +183,19 @@
     &.p-button-text {
         > .p-button {
             background-color: transparent;
-            color: $infoButtonBg;
+            color: variables.$infoButtonBg;
             border-color: transparent;
 
             &:not(:disabled):hover {
-                background: rgba($infoButtonBg, $textButtonHoverBgOpacity);
+                background: rgba(variables.$infoButtonBg, variables.$textButtonHoverBgOpacity);
                 border-color: transparent;
-                color: $infoButtonBg;
+                color: variables.$infoButtonBg;
             }
 
             &:not(:disabled):active {
-                background: rgba($infoButtonBg, $textButtonActiveBgOpacity);
+                background: rgba(variables.$infoButtonBg, variables.$textButtonActiveBgOpacity);
                 border-color: transparent;
-                color: $infoButtonBg;
+                color: variables.$infoButtonBg;
             }
         }
     }
@@ -202,17 +205,17 @@
     &.p-button-outlined {
         > .p-button {
             background-color: transparent;
-            color: $successButtonBg;
-            border: $outlinedButtonBorder;
+            color: variables.$successButtonBg;
+            border: variables.$outlinedButtonBorder;
 
             &:not(:disabled):hover {
-                background: rgba($successButtonBg, $textButtonHoverBgOpacity);
-                color: $successButtonBg;
+                background: rgba(variables.$successButtonBg, variables.$textButtonHoverBgOpacity);
+                color: variables.$successButtonBg;
             }
 
             &:not(:disabled):active {
-                background: rgba($successButtonBg, $textButtonActiveBgOpacity);
-                color: $successButtonBg;
+                background: rgba(variables.$successButtonBg, variables.$textButtonActiveBgOpacity);
+                color: variables.$successButtonBg;
             }
         }
     }
@@ -220,19 +223,19 @@
     &.p-button-text {
         > .p-button {
             background-color: transparent;
-            color: $successButtonBg;
+            color: variables.$successButtonBg;
             border-color: transparent;
 
             &:not(:disabled):hover {
-                background: rgba($successButtonBg, $textButtonHoverBgOpacity);
+                background: rgba(variables.$successButtonBg, variables.$textButtonHoverBgOpacity);
                 border-color: transparent;
-                color: $successButtonBg;
+                color: variables.$successButtonBg;
             }
 
             &:not(:disabled):active {
-                background: rgba($successButtonBg, $textButtonActiveBgOpacity);
+                background: rgba(variables.$successButtonBg, variables.$textButtonActiveBgOpacity);
                 border-color: transparent;
-                color: $successButtonBg;
+                color: variables.$successButtonBg;
             }
         }
     }
@@ -242,17 +245,17 @@
     &.p-button-outlined {
         > .p-button {
             background-color: transparent;
-            color: $warningButtonBg;
-            border: $outlinedButtonBorder;
+            color: variables.$warningButtonBg;
+            border: variables.$outlinedButtonBorder;
 
             &:not(:disabled):hover {
-                background: rgba($warningButtonBg, $textButtonHoverBgOpacity);
-                color: $warningButtonBg;
+                background: rgba(variables.$warningButtonBg, variables.$textButtonHoverBgOpacity);
+                color: variables.$warningButtonBg;
             }
 
             &:not(:disabled):active {
-                background: rgba($warningButtonBg, $textButtonActiveBgOpacity);
-                color: $warningButtonBg;
+                background: rgba(variables.$warningButtonBg, variables.$textButtonActiveBgOpacity);
+                color: variables.$warningButtonBg;
             }
         }
     }
@@ -260,19 +263,19 @@
     &.p-button-text {
         > .p-button {
             background-color: transparent;
-            color: $warningButtonBg;
+            color: variables.$warningButtonBg;
             border-color: transparent;
 
             &:not(:disabled):hover {
-                background: rgba($warningButtonBg, $textButtonHoverBgOpacity);
+                background: rgba(variables.$warningButtonBg, variables.$textButtonHoverBgOpacity);
                 border-color: transparent;
-                color: $warningButtonBg;
+                color: variables.$warningButtonBg;
             }
 
             &:not(:disabled):active {
-                background: rgba($warningButtonBg, $textButtonActiveBgOpacity);
+                background: rgba(variables.$warningButtonBg, variables.$textButtonActiveBgOpacity);
                 border-color: transparent;
-                color: $warningButtonBg;
+                color: variables.$warningButtonBg;
             }
         }
     }
@@ -282,17 +285,17 @@
     &.p-button-outlined {
         > .p-button {
             background-color: transparent;
-            color: $helpButtonBg;
-            border: $outlinedButtonBorder;
+            color: variables.$helpButtonBg;
+            border: variables.$outlinedButtonBorder;
 
             &:not(:disabled):hover {
-                background: rgba($helpButtonBg, $textButtonHoverBgOpacity);
-                color: $helpButtonBg;
+                background: rgba(variables.$helpButtonBg, variables.$textButtonHoverBgOpacity);
+                color: variables.$helpButtonBg;
             }
 
             &:not(:disabled):active {
-                background: rgba($helpButtonBg, $textButtonActiveBgOpacity);
-                color: $helpButtonBg;
+                background: rgba(variables.$helpButtonBg, variables.$textButtonActiveBgOpacity);
+                color: variables.$helpButtonBg;
             }
         }
     }
@@ -300,19 +303,19 @@
     &.p-button-text {
         > .p-button {
             background-color: transparent;
-            color: $helpButtonBg;
+            color: variables.$helpButtonBg;
             border-color: transparent;
 
             &:not(:disabled):hover {
-                background: rgba($helpButtonBg, $textButtonHoverBgOpacity);
+                background: rgba(variables.$helpButtonBg, variables.$textButtonHoverBgOpacity);
                 border-color: transparent;
-                color: $helpButtonBg;
+                color: variables.$helpButtonBg;
             }
 
             &:not(:disabled):active {
-                background: rgba($helpButtonBg, $textButtonActiveBgOpacity);
+                background: rgba(variables.$helpButtonBg, variables.$textButtonActiveBgOpacity);
                 border-color: transparent;
-                color: $helpButtonBg;
+                color: variables.$helpButtonBg;
             }
         }
     }
@@ -322,17 +325,17 @@
     &.p-button-outlined {
         > .p-button {
             background-color: transparent;
-            color: $dangerButtonBg;
-            border: $outlinedButtonBorder;
+            color: variables.$dangerButtonBg;
+            border: variables.$outlinedButtonBorder;
 
             &:not(:disabled):hover {
-                background: rgba($dangerButtonBg, $textButtonHoverBgOpacity);
-                color: $dangerButtonBg;
+                background: rgba(variables.$dangerButtonBg, variables.$textButtonHoverBgOpacity);
+                color: variables.$dangerButtonBg;
             }
 
             &:not(:disabled):active {
-                background: rgba($dangerButtonBg, $textButtonActiveBgOpacity);
-                color: $dangerButtonBg;
+                background: rgba(variables.$dangerButtonBg, variables.$textButtonActiveBgOpacity);
+                color: variables.$dangerButtonBg;
             }
         }
     }
@@ -340,19 +343,19 @@
     &.p-button-text {
         > .p-button {
             background-color: transparent;
-            color: $dangerButtonBg;
+            color: variables.$dangerButtonBg;
             border-color: transparent;
 
             &:not(:disabled):hover {
-                background: rgba($dangerButtonBg, $textButtonHoverBgOpacity);
+                background: rgba(variables.$dangerButtonBg, variables.$textButtonHoverBgOpacity);
                 border-color: transparent;
-                color: $dangerButtonBg;
+                color: variables.$dangerButtonBg;
             }
 
             &:not(:disabled):active {
-                background: rgba($dangerButtonBg, $textButtonActiveBgOpacity);
+                background: rgba(variables.$dangerButtonBg, variables.$textButtonActiveBgOpacity);
                 border-color: transparent;
-                color: $dangerButtonBg;
+                color: variables.$dangerButtonBg;
             }
         }
     }

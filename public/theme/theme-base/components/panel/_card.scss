@@ -1,30 +1,32 @@
+@use "../../../themes/tailwind/tailwind-light/variables";
+
 .p-card {
-    background: $panelContentBg;
-    color: $panelContentTextColor;
-    box-shadow: $cardShadow;
-    border-radius: $borderRadius;
+    background: variables.$panelContentBg;
+    color: variables.$panelContentTextColor;
+    box-shadow: variables.$cardShadow;
+    border-radius: variables.$borderRadius;
 
     .p-card-body {
-        padding: $cardBodyPadding;
+        padding: variables.$cardBodyPadding;
     }
 
     .p-card-title {
-        font-size: $cardTitleFontSize;
-        font-weight: $cardTitleFontWeight;
-        margin-bottom: $inlineSpacing;
+        font-size: variables.$cardTitleFontSize;
+        font-weight: variables.$cardTitleFontWeight;
+        margin-bottom: variables.$inlineSpacing;
     }
 
     .p-card-subtitle {
-        font-weight: $cardSubTitleFontWeight;
-        margin-bottom: $inlineSpacing;
-        color: $cardSubTitleColor;
+        font-weight: variables.$cardSubTitleFontWeight;
+        margin-bottom: variables.$inlineSpacing;
+        color: variables.$cardSubTitleColor;
     }
 
     .p-card-content {
-        padding: $cardContentPadding;
+        padding: variables.$cardContentPadding;
     }
 
     .p-card-footer {
-        padding: $cardFooterPadding;
+        padding: variables.$cardFooterPadding;
     }
 }

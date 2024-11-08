@@ -1,3 +1,6 @@
+@use "../../../themes/tailwind/tailwind-light/variables";
+@use "../../mixins";
+
 //core
 .p-tabview-nav-container {
     position: relative;
@@ -77,71 +80,71 @@
 //theme
 .p-tabview {
     .p-tabview-nav {
-        background: $tabviewNavBg;
-        border: $tabviewNavBorder;
-        border-width: $tabviewNavBorderWidth;
+        background: variables.$tabviewNavBg;
+        border: variables.$tabviewNavBorder;
+        border-width: variables.$tabviewNavBorderWidth;
 
         li {
-            margin-right: $tabviewHeaderSpacing;
+            margin-right: variables.$tabviewHeaderSpacing;
 
             .p-tabview-nav-link {
-                border: $tabviewHeaderBorder;
-                border-width: $tabviewHeaderBorderWidth;
-                border-color: $tabviewHeaderBorderColor;
-                background: $tabviewHeaderBg;
-                color: $tabviewHeaderTextColor;
-                padding: $tabviewHeaderPadding;
-                font-weight: $tabviewHeaderFontWeight;
-                border-top-right-radius: $borderRadius;
-                border-top-left-radius: $borderRadius;
-                transition: $listItemTransition;
-                margin: $tabviewHeaderMargin;
+                border: variables.$tabviewHeaderBorder;
+                border-width: variables.$tabviewHeaderBorderWidth;
+                border-color: variables.$tabviewHeaderBorderColor;
+                background: variables.$tabviewHeaderBg;
+                color: variables.$tabviewHeaderTextColor;
+                padding: variables.$tabviewHeaderPadding;
+                font-weight: variables.$tabviewHeaderFontWeight;
+                border-top-right-radius: variables.$borderRadius;
+                border-top-left-radius: variables.$borderRadius;
+                transition: variables.$listItemTransition;
+                margin: variables.$tabviewHeaderMargin;
 
                 &:not(.p-disabled):focus-visible {
-                    @include focused-inset();
+                    @include mixins.focused-inset();
                 }
             }
 
             &:not(.p-highlight):not(.p-disabled):hover {
                 .p-tabview-nav-link {
-                    background: $tabviewHeaderHoverBg;
-                    border-color: $tabviewHeaderHoverBorderColor;
-                    color: $tabviewHeaderTextHoverColor;
+                    background: variables.$tabviewHeaderHoverBg;
+                    border-color: variables.$tabviewHeaderHoverBorderColor;
+                    color: variables.$tabviewHeaderTextHoverColor;
                 }
             }
 
             &.p-highlight {
                 .p-tabview-nav-link {
-                    background: $tabviewHeaderActiveBg;
-                    border-color: $tabviewHeaderActiveBorderColor;
-                    color: $tabviewHeaderTextActiveColor;
+                    background: variables.$tabviewHeaderActiveBg;
+                    border-color: variables.$tabviewHeaderActiveBorderColor;
+                    color: variables.$tabviewHeaderTextActiveColor;
                 }
             }
         }
     }
 
     .p-tabview-close {
-        margin-left: $inlineSpacing;
+        margin-left: variables.$inlineSpacing;
     }
     
     .p-tabview-nav-btn.p-link {
-        background: $tabviewHeaderActiveBg;
-        color: $tabviewHeaderTextActiveColor;
-        width: $buttonIconOnlyWidth;
-        box-shadow: $raisedButtonShadow;
+        background: variables.$tabviewHeaderActiveBg;
+        color: variables.$tabviewHeaderTextActiveColor;
+        width: variables.$buttonIconOnlyWidth;
+        box-shadow: variables.$raisedButtonShadow;
         border-radius: 0;
 
         &:focus-visible {
-            @include focused-inset();
+            @include mixins.focused-inset();
         }
     }
 
     .p-tabview-panels {
-        background: $tabviewContentBg;
-        padding: $tabviewContentPadding;
-        border: $tabviewContentBorder;
-        color: $tabviewContentTextColor;
-        border-bottom-right-radius: $borderRadius;
-        border-bottom-left-radius: $borderRadius;
+        background: variables.$tabviewContentBg;
+        padding: variables.$tabviewContentPadding;
+        border: variables.$tabviewContentBorder;
+        color: variables.$tabviewContentTextColor;
+        border-bottom-right-radius: variables.$borderRadius;
+        border-bottom-left-radius: variables.$borderRadius;
     }
 }

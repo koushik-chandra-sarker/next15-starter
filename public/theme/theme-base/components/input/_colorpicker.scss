@@ -1,18 +1,20 @@
+@use "../../../themes/tailwind/tailwind-light/variables";
+
 .p-colorpicker-preview  {
-    width: $colorPickerPreviewWidth;
-    height: $colorPickerPreviewHeight;
+    width: variables.$colorPickerPreviewWidth;
+    height: variables.$colorPickerPreviewHeight;
 }
 
 .p-colorpicker-panel {
-    background: $colorPickerBg;
-    border: $colorPickerBorder;
+    background: variables.$colorPickerBg;
+    border: variables.$colorPickerBorder;
 
     .p-colorpicker-color-handle,
     .p-colorpicker-hue-handle {
-        border-color: $colorPickerHandleColor;
+        border-color: variables.$colorPickerHandleColor;
     }
 }
 
 .p-colorpicker-overlay-panel {
-    box-shadow: $inputOverlayShadow;
+    box-shadow: variables.$inputOverlayShadow;
 }

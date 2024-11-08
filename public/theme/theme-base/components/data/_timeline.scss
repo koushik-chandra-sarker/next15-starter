@@ -1,35 +1,37 @@
+@use "../../../themes/tailwind/tailwind-light/variables";
+
 .p-timeline {
     .p-timeline-event-marker {
-        border: $timelineEventMarkerBorder; 
-        border-radius: $timelineEventMarkerBorderRadius;
-        width: $timelineEventMarkerWidth;
-        height: $timelineEventMarkerHeight;
-        background-color: $timelineEventMarkerBackground;
+        border: variables.$timelineEventMarkerBorder; 
+        border-radius: variables.$timelineEventMarkerBorderRadius;
+        width: variables.$timelineEventMarkerWidth;
+        height: variables.$timelineEventMarkerHeight;
+        background-color: variables.$timelineEventMarkerBackground;
     }
 
     .p-timeline-event-connector {
-        background-color: $timelineEventColor;
+        background-color: variables.$timelineEventColor;
     }
 
     &.p-timeline-vertical {
         .p-timeline-event-opposite,
         .p-timeline-event-content  {
-            padding: $timelineVerticalEventContentPadding;
+            padding: variables.$timelineVerticalEventContentPadding;
         }
 
         .p-timeline-event-connector {
-            width: $timelineEventConnectorSize;
+            width: variables.$timelineEventConnectorSize;
         }
     }
 
     &.p-timeline-horizontal {
         .p-timeline-event-opposite,
         .p-timeline-event-content  {
-            padding: $timelineHorizontalEventContentPadding;
+            padding: variables.$timelineHorizontalEventContentPadding;
         }
 
         .p-timeline-event-connector {
-            height: $timelineEventConnectorSize;
+            height: variables.$timelineEventConnectorSize;
         }
     }
 }

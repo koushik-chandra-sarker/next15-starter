@@ -1,10 +1,13 @@
+@use "../../../themes/tailwind/tailwind-light/variables";
+@use "../../mixins";
+
 .p-scrollpanel {
 	.p-scrollpanel-bar {
-		background: $scrollPanelTrackBg;
-		border: $scrollPanelTrackBorder;
+		background: variables.$scrollPanelTrackBg;
+		border: variables.$scrollPanelTrackBorder;
 
 		&:focus-visible {
-			@include focused();
+			@include mixins.focused();
 		}
 	}
 }

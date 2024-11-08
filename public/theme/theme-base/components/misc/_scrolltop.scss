@@ -1,25 +1,27 @@
+@use "../../../themes/tailwind/tailwind-light/variables";
+
 .p-scrolltop {
-    width: $scrollTopWidth;
-    height: $scrollTopHeight;
-    border-radius: $scrollTopBorderRadius;
-    box-shadow: $inputOverlayShadow;
-    transition: $actionIconTransition;
+    width: variables.$scrollTopWidth;
+    height: variables.$scrollTopHeight;
+    border-radius: variables.$scrollTopBorderRadius;
+    box-shadow: variables.$inputOverlayShadow;
+    transition: variables.$actionIconTransition;
 
     &.p-link {
-        background: $scrollTopBg;
+        background: variables.$scrollTopBg;
 
         &:hover {
-            background: $scrollTopHoverBg;
+            background: variables.$scrollTopHoverBg;
         }
     }
 
     .p-scrolltop-icon {
-        font-size: $scrollTopFontSize;
-        color: $scrollTopTextColor;
+        font-size: variables.$scrollTopFontSize;
+        color: variables.$scrollTopTextColor;
 
         &.p-icon {
-            width: $scrollTopFontSize;
-            height: $scrollTopFontSize;
+            width: variables.$scrollTopFontSize;
+            height: variables.$scrollTopFontSize;
         }
     }
 }

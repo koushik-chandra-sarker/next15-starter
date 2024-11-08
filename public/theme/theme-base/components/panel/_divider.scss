@@ -1,31 +1,33 @@
+@use "../../../themes/tailwind/tailwind-light/variables";
+
 .p-divider {
     .p-divider-content {
-        background-color: $panelContentBg;
+        background-color: variables.$panelContentBg;
     }
 
     &.p-divider-horizontal {
-        margin: $dividerHorizontalMargin;
-        padding: $dividerHorizontalPadding;
+        margin: variables.$dividerHorizontalMargin;
+        padding: variables.$dividerHorizontalPadding;
 
         &:before {
-            border-top: $dividerSize $dividerColor;
+            border-top: variables.$dividerSize variables.$dividerColor;
         }
 
         .p-divider-content {
-            padding: 0 $inlineSpacing;
+            padding: 0 variables.$inlineSpacing;
         }
     }
 
     &.p-divider-vertical {
-        margin: $dividerVerticalMargin;
-        padding: $dividerVerticalPadding;
+        margin: variables.$dividerVerticalMargin;
+        padding: variables.$dividerVerticalPadding;
 
         &:before {
-            border-left: $dividerSize $dividerColor;
+            border-left: variables.$dividerSize variables.$dividerColor;
         }
 
         .p-divider-content {
-            padding: $inlineSpacing 0;
+            padding: variables.$inlineSpacing 0;
         }
     }
 }

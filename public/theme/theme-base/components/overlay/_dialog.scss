@@ -1,25 +1,28 @@
+@use "../../../themes/tailwind/tailwind-light/variables";
+@use "../../mixins";
+
 .p-dialog {
-    border-radius: $borderRadius;
-    box-shadow: $overlayContainerShadow;
-    border: $overlayContentBorder;
+    border-radius: variables.$borderRadius;
+    box-shadow: variables.$overlayContainerShadow;
+    border: variables.$overlayContentBorder;
 
     .p-dialog-header {
-        border-bottom: $dialogHeaderBorder;
-        background: $dialogHeaderBg;
-        color: $dialogHeaderTextColor;
-        padding: $dialogHeaderPadding;
-        border-top-right-radius: $borderRadius;
-        border-top-left-radius: $borderRadius;
+        border-bottom: variables.$dialogHeaderBorder;
+        background: variables.$dialogHeaderBg;
+        color: variables.$dialogHeaderTextColor;
+        padding: variables.$dialogHeaderPadding;
+        border-top-right-radius: variables.$borderRadius;
+        border-top-left-radius: variables.$borderRadius;
 
         .p-dialog-title {
-            font-weight: $dialogHeaderFontWeight;
-            font-size: $dialogHeaderFontSize;
+            font-weight: variables.$dialogHeaderFontWeight;
+            font-size: variables.$dialogHeaderFontSize;
         }
 
         .p-dialog-header-icon {
-            @include action-icon();
+            @include mixins.action-icon();
             & {
-                margin-right: $inlineSpacing;
+                margin-right: variables.$inlineSpacing;
             }
 
             &:last-child {
@@ -29,27 +32,27 @@
     }
 
     .p-dialog-content {
-        background: $overlayContentBg;
-        color: $panelContentTextColor;
-        padding: $dialogContentPadding;
+        background: variables.$overlayContentBg;
+        color: variables.$panelContentTextColor;
+        padding: variables.$dialogContentPadding;
 
         &:last-of-type {
-            border-bottom-right-radius: $borderRadius;
-            border-bottom-left-radius: $borderRadius;
+            border-bottom-right-radius: variables.$borderRadius;
+            border-bottom-left-radius: variables.$borderRadius;
         }
     }
 
     .p-dialog-footer {
-        border-top:  $dialogFooterBorder;
-        background: $overlayContentBg;
-        color: $panelFooterTextColor;
-        padding: $dialogFooterPadding;
+        border-top:  variables.$dialogFooterBorder;
+        background: variables.$overlayContentBg;
+        color: variables.$panelFooterTextColor;
+        padding: variables.$dialogFooterPadding;
         text-align: right;
-        border-bottom-right-radius: $borderRadius;
-        border-bottom-left-radius: $borderRadius;
+        border-bottom-right-radius: variables.$borderRadius;
+        border-bottom-left-radius: variables.$borderRadius;
 
         button {
-            margin: 0 $inlineSpacing 0 0;
+            margin: 0 variables.$inlineSpacing 0 0;
             width: auto;
         }
     }
@@ -63,16 +66,16 @@
 
     &.p-confirm-dialog {
         .p-confirm-dialog-icon {
-            font-size: $primeIconFontSize * 2;
+            font-size: variables.$primeIconFontSize * 2;
             
             &.p-icon {
-                width: $primeIconFontSize * 2;
-                height: $primeIconFontSize * 2;
+                width: variables.$primeIconFontSize * 2;
+                height: variables.$primeIconFontSize * 2;
             }
         }
 
         .p-confirm-dialog-message {
-            margin-left: $inlineSpacing * 2;
+            margin-left: variables.$inlineSpacing * 2;
         }
     }
 }

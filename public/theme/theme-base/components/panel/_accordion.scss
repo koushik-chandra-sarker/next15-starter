@@ -1,70 +1,73 @@
+@use "../../../themes/tailwind/tailwind-light/variables";
+@use "../../mixins";
+
 .p-accordion {
     .p-accordion-header {
         .p-accordion-header-link {
-            padding: $accordionHeaderPadding;
-            border: $accordionHeaderBorder;
-            color: $accordionHeaderTextColor;
-            background: $accordionHeaderBg;
-            font-weight: $accordionHeaderFontWeight;
-            border-radius: $borderRadius;
-            transition: $listItemTransition;
+            padding: variables.$accordionHeaderPadding;
+            border: variables.$accordionHeaderBorder;
+            color: variables.$accordionHeaderTextColor;
+            background: variables.$accordionHeaderBg;
+            font-weight: variables.$accordionHeaderFontWeight;
+            border-radius: variables.$borderRadius;
+            transition: variables.$listItemTransition;
 
             .p-accordion-toggle-icon {
-                margin-right: $inlineSpacing;
+                margin-right: variables.$inlineSpacing;
             }
         }
 
         &:not(.p-disabled) {
             .p-accordion-header-link {
                 &:focus-visible {
-                    @include focused();
+                    @include mixins.focused();
                 }
             }
         }
 
         &:not(.p-highlight):not(.p-disabled):hover {
             .p-accordion-header-link {
-                background: $accordionHeaderHoverBg;
-                border-color: $accordionHeaderHoverBorderColor;
-                color: $accordionHeaderTextHoverColor;
+                background: variables.$accordionHeaderHoverBg;
+                border-color: variables.$accordionHeaderHoverBorderColor;
+                color: variables.$accordionHeaderTextHoverColor;
             }
         }
 
         &:not(.p-disabled).p-highlight {
             .p-accordion-header-link {
-                background: $accordionHeaderActiveBg;
-                border-color: $accordionHeaderActiveBorderColor;
-                color: $accordionHeaderTextActiveColor;
+                background: variables.$accordionHeaderActiveBg;
+                border-color: variables.$accordionHeaderActiveBorderColor;
+                color: variables.$accordionHeaderTextActiveColor;
                 border-bottom-right-radius: 0;
                 border-bottom-left-radius: 0;
             }
 
             &:hover {
                 .p-accordion-header-link {
-                    border-color: $accordionHeaderActiveHoverBorderColor;
-                    background: $accordionHeaderActiveHoverBg;
-                    color: $accordionHeaderTextActiveHoverColor;
+                    border-color: variables.$accordionHeaderActiveHoverBorderColor;
+                    background: variables.$accordionHeaderActiveHoverBg;
+                    color: variables.$accordionHeaderTextActiveHoverColor;
                 }
             }
         }
     }
 
     .p-accordion-content {
-        padding: $accordionContentPadding;
-        border: $accordionContentBorder;
-        background: $accordionContentBg;
-        color: $accordionContentTextColor;
+        padding: variables.$accordionContentPadding;
+        border: variables.$accordionContentBorder;
+        background: variables.$accordionContentBg;
+        color: variables.$accordionContentTextColor;
         border-top: 0;
         border-top-right-radius: 0;
         border-top-left-radius: 0;
-        border-bottom-right-radius: $borderRadius;
-        border-bottom-left-radius: $borderRadius;
+        border-bottom-right-radius: variables.$borderRadius;
+        border-bottom-left-radius: variables.$borderRadius;
     }
 
     .p-accordion-tab {
-        margin-bottom: $accordionSpacing;
+        margin-bottom: variables.$accordionSpacing;
 
-        @if $accordionSpacing == 0 {
+        @if variables.$accordionSpacing == 0 {
             .p-accordion-header {
                 .p-accordion-header-link {
                     border-radius: 0;
@@ -94,8 +97,8 @@
             &:first-child {
                 .p-accordion-header {
                     .p-accordion-header-link {
-                        border-top-right-radius: $borderRadius;
-                        border-top-left-radius: $borderRadius;
+                        border-top-right-radius: variables.$borderRadius;
+                        border-top-left-radius: variables.$borderRadius;
                     }
                 }
             }
@@ -103,13 +106,13 @@
             &:last-child {
                 .p-accordion-header:not(.p-highlight) {
                     .p-accordion-header-link {
-                        border-bottom-right-radius: $borderRadius;
-                        border-bottom-left-radius: $borderRadius;
+                        border-bottom-right-radius: variables.$borderRadius;
+                        border-bottom-left-radius: variables.$borderRadius;
                     }
 
                     .p-accordion-content {
-                        border-bottom-right-radius: $borderRadius;
-                        border-bottom-left-radius: $borderRadius;
+                        border-bottom-right-radius: variables.$borderRadius;
+                        border-bottom-left-radius: variables.$borderRadius;
                     }
                 }
             }

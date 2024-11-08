@@ -1,35 +1,37 @@
+@use "../../../themes/tailwind/tailwind-light/variables";
+
 .p-fileupload {
     .p-fileupload-buttonbar {
-        background: $panelHeaderBg;
-        padding: $panelHeaderPadding;
-        border: $panelHeaderBorder;
-        color: $panelHeaderTextColor;
+        background: variables.$panelHeaderBg;
+        padding: variables.$panelHeaderPadding;
+        border: variables.$panelHeaderBorder;
+        color: variables.$panelHeaderTextColor;
         border-bottom: 0 none;
-        border-top-right-radius: $borderRadius;
-        border-top-left-radius: $borderRadius;
-        gap: $inlineSpacing;
+        border-top-right-radius: variables.$borderRadius;
+        border-top-left-radius: variables.$borderRadius;
+        gap: variables.$inlineSpacing;
         
         .p-button {
-            margin-right: $inlineSpacing;
+            margin-right: variables.$inlineSpacing;
         }
     }
 
     .p-fileupload-content {
-        background: $panelContentBg;
-        padding: $fileUploadContentPadding;
-        border: $panelContentBorder;
-        color: $panelContentTextColor;
-        border-bottom-right-radius: $borderRadius;
-        border-bottom-left-radius: $borderRadius;
+        background: variables.$panelContentBg;
+        padding: variables.$fileUploadContentPadding;
+        border: variables.$panelContentBorder;
+        color: variables.$panelContentTextColor;
+        border-bottom-right-radius: variables.$borderRadius;
+        border-bottom-left-radius: variables.$borderRadius;
     }
 
     .p-progressbar {
-        height: $fileUploadProgressBarHeight;
+        height: variables.$fileUploadProgressBarHeight;
     }
 
     .p-fileupload-row {
         > div {
-            padding: $tableBodyCellPadding;
+            padding: variables.$tableBodyCellPadding;
         }
     }
 

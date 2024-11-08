@@ -1,40 +1,43 @@
+@use "../../../themes/tailwind/tailwind-light/variables";
+@use "../../mixins";
+
 .p-breadcrumb {
-	background: $breadcrumbBg;
-	border: $breadcrumbBorder;
-	border-radius: $borderRadius;
-	padding: $breadcrumbPadding;
+	background: variables.$breadcrumbBg;
+	border: variables.$breadcrumbBorder;
+	border-radius: variables.$borderRadius;
+	padding: variables.$breadcrumbPadding;
 
 	.p-breadcrumb-list {
 		li {
 			.p-menuitem-link {
-				transition: $listItemTransition;
-				border-radius: $borderRadius;
+				transition: variables.$listItemTransition;
+				border-radius: variables.$borderRadius;
 
 				&:focus-visible {
-					@include focused();
+					@include mixins.focused();
 				}
 
 				.p-menuitem-text {
-					color: $breadcrumbItemTextColor;
+					color: variables.$breadcrumbItemTextColor;
 				}
 
 				.p-menuitem-icon {
-					color: $breadcrumbItemIconColor;
+					color: variables.$breadcrumbItemIconColor;
 				}
 			}
 
 			&.p-menuitem-separator {
-				margin: 0 $inlineSpacing 0 $inlineSpacing;
-				color: $breadcrumbSeparatorColor;
+				margin: 0 variables.$inlineSpacing 0 variables.$inlineSpacing;
+				color: variables.$breadcrumbSeparatorColor;
 			}
 
 			&:last-child {
 				.p-menuitem-text {
-					color: $breadcrumbLastItemTextColor;
+					color: variables.$breadcrumbLastItemTextColor;
 				}
 
 				.p-menuitem-icon {
-					color: $breadcrumbLastItemIconColor;
+					color: variables.$breadcrumbLastItemIconColor;
 				}
 			}
 		}

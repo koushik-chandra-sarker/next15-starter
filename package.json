@@ -10,10 +10,12 @@
   },
   "dependencies": {
     "next": "15.0.2",
+    "next-auth": "5.0.0-beta.25",
     "primeicons": "^7.0.0",
     "primereact": "^10.8.4",
     "react": "19.0.0-rc-02c0e824-20241028",
     "react-dom": "19.0.0-rc-02c0e824-20241028",
+    "react-hot-toast": "^2.4.1",
     "sass": "^1.80.6"
   },
   "devDependencies": {

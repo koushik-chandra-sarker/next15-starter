@@ -1,40 +1,42 @@
+@use "../../../themes/tailwind/tailwind-light/variables";
+
 @use 'sass:math';
 
 .p-tag {
-    background: $badgeBg;
-    color: $badgeTextColor;
-    font-size: $badgeFontSize;
-    font-weight: $badgeFontWeight;
-    padding: $tagPadding;
-    border-radius: $borderRadius;
+    background: variables.$badgeBg;
+    color: variables.$badgeTextColor;
+    font-size: variables.$badgeFontSize;
+    font-weight: variables.$badgeFontWeight;
+    padding: variables.$tagPadding;
+    border-radius: variables.$borderRadius;
 
     &.p-tag-success {
-        background-color: $successButtonBg;
-        color: $successButtonTextColor;
+        background-color: variables.$successButtonBg;
+        color: variables.$successButtonTextColor;
     }
 
     &.p-tag-info {
-        background-color: $infoButtonBg;
-        color: $infoButtonTextColor;
+        background-color: variables.$infoButtonBg;
+        color: variables.$infoButtonTextColor;
     }
 
     &.p-tag-warning {
-        background-color: $warningButtonBg;
-        color: $warningButtonTextColor;
+        background-color: variables.$warningButtonBg;
+        color: variables.$warningButtonTextColor;
     }
 
     &.p-tag-danger {
-        background-color: $dangerButtonBg;
-        color: $dangerButtonTextColor;
+        background-color: variables.$dangerButtonBg;
+        color: variables.$dangerButtonTextColor;
     }
 
     .p-tag-icon {
-        margin-right: math.div($inlineSpacing, 2);
-        font-size: $badgeFontSize;
+        margin-right: math.div(variables.$inlineSpacing, 2);
+        font-size: variables.$badgeFontSize;
 
         &.p-icon {
-            width: $badgeFontSize;
-            height: $badgeFontSize;
+            width: variables.$badgeFontSize;
+            height: variables.$badgeFontSize;
         }
     }
 }

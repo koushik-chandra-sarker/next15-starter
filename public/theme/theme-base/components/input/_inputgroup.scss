@@ -1,14 +1,16 @@
+@use "../../../themes/tailwind/tailwind-light/variables";
+
 .p-inputgroup-addon {
-    background: $inputGroupBg;
-    color: $inputGroupTextColor;
-    border-top: $inputBorder;
-    border-left: $inputBorder;
-    border-bottom: $inputBorder;
-    padding: $inputPadding;
-    min-width: $inputGroupAddOnMinWidth;
+    background: variables.$inputGroupBg;
+    color: variables.$inputGroupTextColor;
+    border-top: variables.$inputBorder;
+    border-left: variables.$inputBorder;
+    border-bottom: variables.$inputBorder;
+    padding: variables.$inputPadding;
+    min-width: variables.$inputGroupAddOnMinWidth;
 
     &:last-child {
-        border-right: $inputBorder;
+        border-right: variables.$inputBorder;
     }
 }
 
@@ -38,13 +40,13 @@
 .p-inputgroup input:first-child,
 .p-inputgroup > .p-inputwrapper:first-child,
 .p-inputgroup > .p-inputwrapper:first-child > .p-inputtext {
-    border-top-left-radius: $borderRadius;
-    border-bottom-left-radius: $borderRadius;
+    border-top-left-radius: variables.$borderRadius;
+    border-bottom-left-radius: variables.$borderRadius;
 }
 
 .p-inputgroup .p-float-label:first-child input {
-    border-top-left-radius: $borderRadius;
-    border-bottom-left-radius: $borderRadius;
+    border-top-left-radius: variables.$borderRadius;
+    border-bottom-left-radius: variables.$borderRadius;
 }
 
 .p-inputgroup-addon:last-child,
@@ -52,13 +54,13 @@
 .p-inputgroup input:last-child,
 .p-inputgroup > .p-inputwrapper:last-child, 
 .p-inputgroup > .p-inputwrapper:last-child > .p-inputtext {
-    border-top-right-radius: $borderRadius;
-    border-bottom-right-radius: $borderRadius;
+    border-top-right-radius: variables.$borderRadius;
+    border-bottom-right-radius: variables.$borderRadius;
 }
 
 .p-inputgroup .p-float-label:last-child input {
-    border-top-right-radius: $borderRadius;
-    border-bottom-right-radius: $borderRadius;
+    border-top-right-radius: variables.$borderRadius;
+    border-bottom-right-radius: variables.$borderRadius;
 }
 
 .p-fluid {
@@ -67,7 +69,7 @@
             width: auto;
 
             &.p-button-icon-only {
-                width: $buttonIconOnlyWidth;
+                width: variables.$buttonIconOnlyWidth;
             }
         }
     }
