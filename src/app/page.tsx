@@ -2,10 +2,15 @@
 import {Button} from "primereact/button";
 import {FloatLabel} from "primereact/floatlabel";
 import {InputText} from "primereact/inputtext";
-import {useState} from "react";
+import { useState} from "react";
+import {useSession} from "next-auth/react";
 
-export default function Home() {
+const Home = ()=> {
     const [value, setValue] = useState('');
+    const { data: session } = useSession();
+    // useEffect(()=>{
+    //     showAlertWithCallback('Login Successful', 'You are now logged in!', 'success');
+    // }, [])
   return (
     <div>
       <Button label="Submit"  />
@@ -14,8 +19,9 @@ export default function Home() {
             <InputText id="username" value={value} onChange={(e) => setValue(e.target.value)} />
             <label htmlFor="username">Username</label>
         </FloatLabel>
-        <p>This </p>
         <h3>this is working fine</h3>
+        <p>{ session?.user?.accessToken}</p>
     </div>
   );
 }
+export default Home;
