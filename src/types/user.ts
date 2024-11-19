@@ -7,6 +7,7 @@ interface UserType {
     accessToken?: string;
     refreshToken?: string;
     subId?: string;
+    role?: string[]
 }
 interface JwtType {
     accessToken?: string;

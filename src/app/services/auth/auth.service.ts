@@ -4,12 +4,10 @@ import { signIn, signOut } from "@/auth";
 import { AuthError } from "next-auth";
 import {CredentialsType} from "@/types/login";
 import {JwtType} from "@/types/user";
-import Swal from 'sweetalert2'
+
+
 export async function login({ username, password }: CredentialsType, callbackUrl: string) {
     try {
-
-        console.log("callbackUrl", callbackUrl);
-
         // Call signIn with the callbackUrl
         await signIn("credentials", { username, password, redirectTo: callbackUrl });
     } catch (error) {
@@ -29,19 +27,19 @@ export async function login({ username, password }: CredentialsType, callbackUrl
     }
 }
 export async function logout() {
+    console.log("************************Logout***********************");
     await signOut();
 }
 
 export async function refreshAccessToken(token: JwtType) {
-    console.log("Refreshing access token...");
     try {
-
+        console.log("************************Refresh Token***********************");
         const response = await fetch(`https://dummyjson.com/auth/refresh`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                refreshToken: '/* YOUR_REFRESH_TOKEN_HERE */', // Optional, if not provided, the server will use the cookie
-                expiresInMins: 2, // optional (FOR ACCESS TOKEN), defaults to 60
+                refreshToken: token.refreshToken,
+                expiresInMins: 1, // optional (FOR ACCESS TOKEN), defaults to 60
             }),
             credentials: 'include' // Include cookies (e.g., accessToken) in the request
         })
