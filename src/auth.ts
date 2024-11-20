@@ -35,6 +35,7 @@ declare module "next-auth/jwt" {
         errorMassage?: string
     }
 }
+
 export const { handlers, signIn, signOut, auth } = NextAuth({
     providers: [
         Credentials({
@@ -104,7 +105,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         signIn: "/auth/login",
     },
     callbacks: {
-        async jwt({ token,account, user }: { token: JWT; account: Account; user: User })  {
+        // @ts-ignore
+        async jwt({ token,account, user }: { token: JWT; account: Account; user: User }): Awaitable<JWT> {
             if (token.accessToken) {
                 const decodedToken = jwtDecode(token.accessToken);
                 token.accessTokenExpires = decodedToken?.exp && decodedToken.exp * 1000;

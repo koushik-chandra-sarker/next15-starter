@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useRef } from "react";
 import { useSession } from "next-auth/react";
 import Swal from "sweetalert2";

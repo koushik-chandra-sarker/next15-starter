@@ -1,9 +1,5 @@
 
-@layer tailwind-base, primereact, tailwind-utilities;
 
-/* IMPORTANT: In "styled" mode you must add the PrimeReact Theme here. Do NOT include in "unstyled" mode */
-/*@import 'primereact/resources/themes/lara-light-blue/theme.css';*/
-//@import 'primeflex/primeflex.scss';
 @layer tailwind-base {
   @tailwind base;
 }
@@ -11,4 +7,26 @@
 @layer tailwind-utilities {
   @tailwind components;
   @tailwind utilities;
+}
+
+@layer tailwind-base, primereact, tailwind-utilities;
+
+/* IMPORTANT: In "styled" mode you must add the PrimeReact Theme here. Do NOT include in "unstyled" mode */
+/*//@import 'primeflex/primeflex.scss';*/
+/*//@import "public/theme/themes/tailwind/tailwind-light/theme.scss";*/
+
+
+
+/* Example animation for the logo */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
 }

@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import {auth} from "@/auth";
 
 export { auth as middleware } from "@/auth"

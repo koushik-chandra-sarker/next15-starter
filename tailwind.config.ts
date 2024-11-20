@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  mode: 'jit',
   // corePlugins: {
   //   preflight: false, // Disable preflight to prevent Tailwind from resetting global styles
   // },

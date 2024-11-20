@@ -1,10 +1,10 @@
 "use client";
+import React from "react";
 import { InputText } from "primereact/inputtext";
 import { Checkbox } from "primereact/checkbox";
 import { Button } from "primereact/button";
-import {useEffect, useState} from "react";
+import { useState} from "react";
 import {login} from "@/app/services/auth/auth.service";
-import Swal from "sweetalert2";
 
 const LoginPage = () => {
     const [username, setUsername] = useState("");
@@ -58,7 +58,7 @@ const LoginPage = () => {
                             <Checkbox
                                 inputId="rememberme"
                                 checked={rememberMe}
-                                onChange={(e) => setRememberMe(e.checked)}
+                                onChange={(e) => setRememberMe(!!e.checked)}
                                 className="mr-2"
                             />
                             <label htmlFor="rememberme" className="text-gray-700">
