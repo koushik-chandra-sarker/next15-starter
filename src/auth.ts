@@ -140,45 +140,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             return session;
         },
         authorized({ request: { nextUrl }, auth }) {
-            /*const { pathname } = nextUrl;
-            const isLoggedIn = !!auth?.user;
-            const isPublicRoute = ((PUBLIC_ROUTES.find(route => nextUrl.pathname.startsWith(route)))
-                && !PROTECTED_ROUTES.find(route => nextUrl.pathname.includes(route.path)));
-            if (isPublicRoute) {
-                return true
-            }
-            if (!isLoggedIn) {
-                return false
-            }
-            if ((pathname.startsWith(LOGIN_PATH) || pathname.startsWith(RESIGISTER_PATH)) && isLoggedIn) {
-                return Response.redirect(new URL('/', nextUrl));
-            }
-            // Get user role (default to "user" if undefined)
-            const userRoles = auth?.user?.role || ['user'];
-
-            // Check if the route requires specific roles
-            const protectedRoute = PROTECTED_ROUTES.find(route => pathname.startsWith(route.path));
-
-            // If route has role restrictions, verify user role
-            if (protectedRoute && isLoggedIn) {
-                const isAuthorized = userRoles.some(role => protectedRoute.roles.includes(role));
-
-                if (!isAuthorized) {
-                    // Redirect if user does not have the necessary role
-                    return Response.redirect(new URL('/', nextUrl));
-                }
-            }
-
-
-            return !!auth;*/
-
             const { pathname } = nextUrl;
             const isLoggedIn = !!auth?.user;
-
-            // Debugging logs
-            console.log('Pathname:', pathname);
-            console.log('Is Logged In:', isLoggedIn);
-            console.log('Auth User:', auth?.user);
 
             // Redirect logged-in users away from login/register pages
             if ((pathname.startsWith(LOGIN_PATH) || pathname.startsWith(REGISTER_PATH)) && isLoggedIn) {
@@ -197,15 +160,14 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
             if (protectedRoute) {
                 if (!isLoggedIn) {
-                    // Redirect unauthenticated users to login page
-                    return Response.redirect(new URL(LOGIN_PATH, nextUrl));
+                    return false
                 }
                 // If no roles are defined or roles is an empty array, allow all users
                 if (!protectedRoute.roles || protectedRoute.roles.length === 0) {
                     return true; // Allow access for all users
                 }
                 const userRoles = auth?.user?.role || ['user']; // Default role is "user"
-                const isAuthorized = userRoles.some(role => protectedRoute.roles.includes(role));
+                const isAuthorized = userRoles.some(role => protectedRoute.roles?.includes(role));
 
                 if (!isAuthorized) {
                     // Redirect unauthorized users to root
