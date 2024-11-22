@@ -7,7 +7,7 @@ import {Avatar} from "primereact/avatar";
 import {Menubar} from "primereact/menubar";
 
 const itemRenderer = (item: MenuItem) => (
-    <Link href={item.url? item.url : "/"} className="flex align-items-center p-menuitem-link">
+    <Link href={item.url? item.url : "/"} replace={true} className="flex align-items-center p-menuitem-link">
         <span className={item.icon} />
         <span className="mx-2">{item.label}</span>
     </Link>

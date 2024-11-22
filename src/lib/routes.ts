@@ -1,13 +1,11 @@
+import {ProjectedRoutes} from "@/types/ProjectedRoutes";
+
 export const LOGIN_PATH = '/auth/login';
-export const RESIGISTER_PATH = '/auth/register';
+export const REGISTER_PATH = '/auth/register';
 export const ROOT_PATH = '/';
 
-export const PUBLIC_ROUTES: string[] = [
-    '/api/auth/callback/google',
-    '/api/auth/callback/github',
-];
-
-export const PROTECTED_ROUTES = [
+export const PROTECTED_ROUTES: ProjectedRoutes = [
+    // { path: '/', roles: ['user'], exact: true },
     { path: '/admin', roles: ['admin'] },
     { path: '/user/profile', roles: ['user', 'admin'] },
     { path: '/settings', roles: ['admin', 'editor'] },

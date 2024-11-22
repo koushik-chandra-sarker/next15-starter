@@ -10,7 +10,7 @@ import {refreshAccessToken} from "@/app/services/auth/auth.service";
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
-import {LOGIN_PATH, PROTECTED_ROUTES, PUBLIC_ROUTES, RESIGISTER_PATH} from "@/lib/routes";
+import {LOGIN_PATH, PROTECTED_ROUTES, REGISTER_PATH, ROOT_PATH} from "@/lib/routes";
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
@@ -140,8 +140,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             return session;
         },
         authorized({ request: { nextUrl }, auth }) {
+            /*const { pathname } = nextUrl;
             const isLoggedIn = !!auth?.user;
-            const { pathname } = nextUrl;
             const isPublicRoute = ((PUBLIC_ROUTES.find(route => nextUrl.pathname.startsWith(route)))
                 && !PROTECTED_ROUTES.find(route => nextUrl.pathname.includes(route.path)));
             if (isPublicRoute) {
@@ -170,7 +170,54 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             }
 
 
-            return !!auth;
+            return !!auth;*/
+
+            const { pathname } = nextUrl;
+            const isLoggedIn = !!auth?.user;
+
+            // Debugging logs
+            console.log('Pathname:', pathname);
+            console.log('Is Logged In:', isLoggedIn);
+            console.log('Auth User:', auth?.user);
+
+            // Redirect logged-in users away from login/register pages
+            if ((pathname.startsWith(LOGIN_PATH) || pathname.startsWith(REGISTER_PATH)) && isLoggedIn) {
+                return Response.redirect(new URL(ROOT_PATH, nextUrl)); // Redirect to home/root
+            }
+
+            /// Match protected route with `exact` flag logic
+            const protectedRoute = PROTECTED_ROUTES.find(route => {
+                const exactMatch = route.exact !== undefined ? route.exact : false; // Default to false if not specified
+                if (exactMatch) {
+                    return pathname === route.path; // Exact match
+                }
+                return pathname.startsWith(route.path); // Non-exact match
+            });
+
+
+            if (protectedRoute) {
+                if (!isLoggedIn) {
+                    // Redirect unauthenticated users to login page
+                    return Response.redirect(new URL(LOGIN_PATH, nextUrl));
+                }
+                // If no roles are defined or roles is an empty array, allow all users
+                if (!protectedRoute.roles || protectedRoute.roles.length === 0) {
+                    return true; // Allow access for all users
+                }
+                const userRoles = auth?.user?.role || ['user']; // Default role is "user"
+                const isAuthorized = userRoles.some(role => protectedRoute.roles.includes(role));
+
+                if (!isAuthorized) {
+                    // Redirect unauthorized users to root
+                    console.error(`Unauthorized access to ${pathname} by role(s): ${userRoles}`);
+                    return Response.redirect(new URL(ROOT_PATH, nextUrl));
+                }
+
+                return true; // Authorized access
+            }
+
+            // Allow access to public routes (not in PROTECTED_ROUTES)
+            return true;
         },
 
 

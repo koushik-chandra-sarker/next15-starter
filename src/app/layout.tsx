@@ -2,15 +2,13 @@
 import React, {useEffect, useState} from "react";
 import "./globals.scss";
 import "../../public/theme/themes/tailwind/tailwind-light/theme.scss";
-// import "primereact/resources/themes/lara-light-blue/theme.css";
-import "primereact/resources/themes/saga-green/theme.css";
 import 'sweetalert2/src/sweetalert2.scss'
 import {Toaster} from "react-hot-toast";
 import {SessionProvider} from "next-auth/react";
 import SessionExpirationWatcher from "@/lib/SessionExpirationWatcher";
 import {Navbar} from "@/components/layout/header/Navbar";
-import SplashScreen from "@/components/SplashScreen";
 import {Metadata} from "next";
+import SplashScreen from "@/components/SplashScreen";
 
 // export const metadata: Metadata = {
 //     title: 'My App',
@@ -20,14 +18,6 @@ import {Metadata} from "next";
 const RootLayout = ({ children, }: { children: React.ReactNode; }) => {
     const [isLoading, setIsLoading] = useState(true);
     const [isPageReady, setIsPageReady] = useState(false);
-
-/*    useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsLoading(false); // Hide splash screen after 2 seconds
-        }, 2000);
-
-        return () => clearTimeout(timer); // Cleanup timeout
-    }, []);*/
     useEffect(() => {
         const handlePageReady = () => {
             setIsPageReady(true);
