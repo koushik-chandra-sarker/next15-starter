@@ -14,12 +14,9 @@ export const isTokenExpired = (token: string): boolean => {
         const decodedToken = jwtDecode(token);
         const expirationTime = decodedToken?.exp ? decodedToken.exp * 1000 : null;
 
-        console.log("Expiration Time: ", expirationTime);
-
         if (!expirationTime) return true; // If no expiration, treat as expired
 
         const expirationTimeLocal = dayjs(expirationTime).tz(dayjs.tz.guess());
-        console.log("Expiration Time Local: ", expirationTimeLocal);
 
         // Return true if the current time is after the expiration time
         return dayjs().isAfter(expirationTimeLocal);

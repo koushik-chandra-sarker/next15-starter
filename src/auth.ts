@@ -10,7 +10,7 @@ import {refreshAccessToken} from "@/app/services/auth/auth.service";
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
-import {LOGIN_PATH, PROTECTED_ROUTES, REGISTER_PATH, ROOT_PATH} from "@/lib/routes";
+import {LOGIN_PATH, LOGIN_REDIRECT_PATH, PROTECTED_ROUTES, REGISTER_PATH, ROOT_PATH} from "@/lib/routes";
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
@@ -36,7 +36,7 @@ declare module "next-auth/jwt" {
     }
 }
 
-export const { handlers, signIn, signOut, auth } = NextAuth({
+export const { handlers, signIn, signOut, auth  } = NextAuth({
     providers: [
         Credentials({
             credentials: {
@@ -145,7 +145,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
             // Redirect logged-in users away from login/register pages
             if ((pathname.startsWith(LOGIN_PATH) || pathname.startsWith(REGISTER_PATH)) && isLoggedIn) {
-                return Response.redirect(new URL(ROOT_PATH, nextUrl)); // Redirect to home/root
+                return Response.redirect(new URL(LOGIN_REDIRECT_PATH, nextUrl)); // Redirect to home/root
             }
 
             /// Match protected route with `exact` flag logic
@@ -160,7 +160,11 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
             if (protectedRoute) {
                 if (!isLoggedIn) {
-                    return false
+                    // return false
+                    // Store the callback URL in the search params
+                    const loginUrl = new URL(LOGIN_PATH, nextUrl);
+                    loginUrl.searchParams.set("callbackUrl", nextUrl.href);
+                    return Response.redirect(loginUrl); // Redirect to login with callback URL
                 }
                 // If no roles are defined or roles is an empty array, allow all users
                 if (!protectedRoute.roles || protectedRoute.roles.length === 0) {
